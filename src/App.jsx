@@ -1,47 +1,96 @@
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useParams, Link } from 'react-router-dom';
 
-// --- Custom Hook for SEO ---
-// This hook directly updates the page title and meta description.
-const useDocumentMeta = (title, description) => {
+// --- Custom Hook for SEO (with Structured Data) ---
+const useDocumentMeta = (title, description, schemaData) => {
   useEffect(() => {
     document.title = title;
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', description);
     }
-  }, [title, description]);
+    
+    // Remove existing schema script if any
+    const existingScript = document.getElementById('schema-json');
+    if (existingScript) {
+      existingScript.remove();
+    }
+
+    // Add new schema script
+    if (schemaData) {
+      const script = document.createElement('script');
+      script.id = 'schema-json';
+      script.type = 'application/ld+json';
+      script.innerHTML = JSON.stringify(schemaData);
+      document.head.appendChild(script);
+    }
+  }, [title, description, schemaData]);
 };
 
-
-// --- Icon Components ---
+// Icons
 const IconGeneral = () => (
-  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+  <img 
+    src="/icons/general.svg" 
+    alt="General Knowledge Icon" 
+    className="w-12 h-12 mx-auto mb-4" 
+  />
 );
 const IconGamepad = () => (
-  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 17l-5-5a2 2 0 112.828-2.828L11 11.172l5.172-5.172a2 2 0 112.828 2.828L13 15V5a2 2 0 00-4 0v10z M6 13a2 2 0 110-4 2 2 0 010 4z M18 13a2 2 0 110-4 2 2 0 010 4z"></path></svg>
+  <img 
+    src="/icons/gamepad.svg" 
+    alt="Video Games Icon" 
+    className="w-12 h-12 mx-auto mb-4" 
+  />
 );
 const IconHistory = () => (
-  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v11.494m-9-8.494h18M5 12.747h14M4 15.253h16M3 17.747h18"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16v12H4z"></path></svg>
+  <img 
+    src="/icons/history.svg" 
+    alt="History Icon" 
+    className="w-12 h-12 mx-auto mb-4" 
+  />
 );
 const IconMusic = () => (
-  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19V6l10-3v13M9 19a4 4 0 11-4-4 4 4 0 014 4zm10-13a4 4 0 11-4-4 4 4 0 014 4z"></path></svg>
+  <img 
+    src="/icons/music.svg" 
+    alt="Music Icon" 
+    className="w-12 h-12 mx-auto mb-4" 
+  />
 );
 const IconFilm = () => (
-  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 4h16v16H4z"></path></svg>
+  <img 
+    src="/icons/film.svg" 
+    alt="Film Icon" 
+    className="w-12 h-12 mx-auto mb-4" 
+  />
 );
 const IconScience = () => (
-  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 21a9 9 0 100-18 9 9 0 000 18z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3a9 9 0 015.657 15.343A9 9 0 016.343 8.657 9 9 0 0112 3z"></path><path d="M12 12s2.121-5.657 6-6M12 12s-5.657 2.121-6 6"></path></svg>
+  <img 
+    src="/icons/science.svg" 
+    alt="Science & Nature Icon" 
+    className="w-12 h-12 mx-auto mb-4" 
+  />
 );
 const IconSports = () => (
-  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+  <img 
+    src="/icons/sports.svg" 
+    alt="Sports Icon" 
+    className="w-12 h-12 mx-auto mb-4" 
+  />
 );
 const IconMythology = () => (
-    <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+  <img 
+    src="/icons/mythology.svg" 
+    alt="Mythology Icon" 
+    className="w-12 h-12 mx-auto mb-4" 
+  />
 );
 const IconAnimals = () => (
-    <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.5 9.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 15h6a1 1 0 011 1v1a3 3 0 01-3 3H8a3 3 0 01-3-3v-1a1 1 0 011-1z"></path><path d="M9 9h.01M15 9h.01"></path></svg>
+  <img 
+    src="/icons/animals.svg" 
+    alt="Animals Icon" 
+    className="w-12 h-12 mx-auto mb-4" 
+  />
 );
-
 // --- DifficultyBadge Component ---
 const DifficultyBadge = ({ difficulty }) => {
   const badgeClasses = {
@@ -83,13 +132,11 @@ const Layout = ({ children, onGoHome }) => {
   );
 };
 
-
-// --- Main App Component ---
+// --- Main App Component (Refactored for React Router) ---
 export default function App() {
-  const [view, setView] = useState('home'); 
-  const [gameOptions, setGameOptions] = useState(null); 
   const [token, setToken] = useState('');
   const [tokenLoading, setTokenLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const controller = new AbortController();
@@ -107,36 +154,29 @@ export default function App() {
     };
     fetchToken();
     return () => controller.abort();
-}, []);
-
-  const handleGameStart = (options) => {
-    setGameOptions(options);
-    setView('playing');
-  };
-
-  const handleGameFinish = () => {
-    setView('home');
-    setGameOptions(null);
-  };
+  }, []);
 
   return (
-    <Layout onGoHome={handleGameFinish}>
-      {view === 'home' && <HomePage onGameStart={handleGameStart} tokenLoading={tokenLoading} />}
-      {view === 'playing' && <TriviaGame gameOptions={gameOptions} token={token} onGameFinish={handleGameFinish} />}
+    <Layout onGoHome={() => navigate('/')}>
+      <Routes>
+        <Route path="/" element={<HomePage tokenLoading={tokenLoading} />} />
+        <Route path="/quiz/:categorySlug/:difficulty" element={<TriviaGame token={token} />} />
+      </Routes>
     </Layout>
   );
 }
 
-// --- HomePage Component ---
-const HomePage = ({ onGameStart, tokenLoading }) => {
-  const [selectedCategory, setSelectedCategory] = useState(null);
-  
-  useDocumentMeta(
-    'Simply Trivial - FREE Trivia Quiz Game',
-    'Challenge your knowledge with a free trivia quiz game. Choose from dozens of categories like History, Music, Science, and more!'
-  );
+// --- Helper function to create URL-friendly slugs ---
+const slugify = (text) => {
+  return text.toString().toLowerCase()
+    .replace(/\s+/g, '-')           // Replace spaces with -
+    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
+    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
+    .replace(/^-+/, '')             // Trim - from start of text
+    .replace(/-+$/, '');            // Trim - from end of text
+};
 
-  const categories = [
+const allCategories = [
     { id: 9, name: 'General Knowledge', icon: <IconGeneral /> },
     { id: 15, name: 'Video Games', icon: <IconGamepad /> },
     { id: 23, name: 'History', icon: <IconHistory /> },
@@ -146,14 +186,19 @@ const HomePage = ({ onGameStart, tokenLoading }) => {
     { id: 21, name: 'Sports', icon: <IconSports /> },
     { id: 20, name: 'Mythology', icon: <IconMythology /> },
     { id: 27, name: 'Animals', icon: <IconAnimals /> },
-  ];
+];
+
+// --- HomePage Component ---
+const HomePage = ({ tokenLoading }) => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  
+  useDocumentMeta(
+    'Simply Trivial - FREE Trivia Quiz Game',
+    'Challenge your knowledge with a free trivia quiz game. Choose from dozens of categories like History, Music, Science, and more!'
+  );
 
   const difficulties = ['Easy', 'Medium', 'Hard'];
 
-  const handleDifficultySelect = (difficulty) => {
-    onGameStart({ category: selectedCategory, difficulty: difficulty.toLowerCase() });
-  };
-  
   const difficultyButtonClasses = {
       Easy: 'bg-green-600 hover:bg-green-700',
       Medium: 'bg-yellow-500 hover:bg-yellow-600',
@@ -171,13 +216,13 @@ const HomePage = ({ onGameStart, tokenLoading }) => {
             <p className="text-slate-400 mb-8 text-lg">Now, select a difficulty.</p>
             <div className="flex justify-center gap-4 mb-8">
                 {difficulties.map(diff => (
-                    <button 
+                    <Link
                         key={diff} 
-                        onClick={() => handleDifficultySelect(diff)} 
+                        to={`/quiz/${slugify(selectedCategory.name)}/${diff.toLowerCase()}`}
                         className={`${difficultyButtonClasses[diff]} text-white font-bold py-3 px-8 rounded-lg text-xl transition-transform transform hover:scale-105`}
                     >
                         {diff}
-                    </button>
+                    </Link>
                 ))}
             </div>
             <button onClick={() => setSelectedCategory(null)} className="text-slate-400 hover:text-white transition">
@@ -189,11 +234,11 @@ const HomePage = ({ onGameStart, tokenLoading }) => {
 
   return (
       <div className="text-center">
-        <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 font-display">Test Your Knowledge</h2>
+        <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 font-display">Test Your Knowledge</h1>
         <p className="text-slate-400 mb-12 text-lg">Select a category to start the challenge.</p>
         
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-          {categories.map((cat) => (
+          {allCategories.map((cat) => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat)}
@@ -217,8 +262,12 @@ const HomePage = ({ onGameStart, tokenLoading }) => {
 
 
 // --- TriviaGame Component ---
-const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
-  const { category, difficulty } = gameOptions;
+const TriviaGame = ({ token }) => {
+  const { categorySlug, difficulty } = useParams();
+  const navigate = useNavigate();
+
+  const category = allCategories.find(c => slugify(c.name) === categorySlug);
+
   const [questions, setQuestions] = useState([]);
   const [gameState, setGameState] = useState('playing'); 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -228,19 +277,41 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  
-  const title = `${category.name} Quiz - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} | Simply Trivial`;
-  const description = `Test your knowledge with our ${difficulty} ${category.name} trivia quiz. Play for free now!`;
-  useDocumentMeta(title, description);
+  const title = category ? `${category.name} Quiz - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} | Simply Trivial` : 'Quiz | Simply Trivial';
+  const description = category ? `Test your knowledge with our ${difficulty} ${category.name} trivia quiz. Play for free now!` : 'Play a fun trivia quiz!';
+
+  const quizSchema = (category && questions.length > 0) ? {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "name": `${category.name} Quiz - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)}`,
+    "description": description,
+    "hasPart": questions.map((q, index) => ({
+      "@type": "Question",
+      "name": `Question ${index + 1}`,
+      "text": q.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": q.correct_answer
+      }
+    }))
+  } : null;
+
+  useDocumentMeta(title, description, quizSchema);
 
   useEffect(() => {
-    const controller = new AbortController();
-    const fetchTriviaQuestions = async () => {
-      if (!token) {
+    if (!category) {
+        setError("Invalid category specified.");
+        setLoading(false);
+        return;
+    }
+    if (!token) {
         setError("Missing API session token.");
         setLoading(false);
         return;
-      }
+    }
+    
+    const controller = new AbortController();
+    const fetchTriviaQuestions = async () => {
       setLoading(true);
       setError(null);
       try {
@@ -250,19 +321,16 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
         
         const data = await response.json();
         
-        if (data.response_code === 1) {
-            throw new Error("The API doesn't have enough questions for this category/difficulty. Please try another combination.");
-        } 
-        else if (data.response_code === 2) {
-            throw new Error("The request contains invalid parameters. Please try again.");
+        if (data.response_code !== 0) {
+            const apiErrors = {
+                1: "The API doesn't have enough questions for this category/difficulty. Please try another.",
+                2: "The request contains invalid parameters. Please try again.",
+                3: "There was a session token error. Please return to the main menu to refresh.",
+                4: "There was a session token error. Please return to the main menu to refresh.",
+                5: "Too many requests. Please wait a moment and try again."
+            };
+            throw new Error(apiErrors[data.response_code] || "An unknown API error occurred.");
         }
-        else if (data.response_code === 3 || data.response_code === 4) {
-            throw new Error("There was a session token error. Please return to the main menu to refresh the session.");
-        }
-        else if (data.response_code === 5) {
-            throw new Error("Too many requests have been made in a short time. Please wait a moment and try again.");
-        }
-
   
         if (!controller.signal.aborted) {
           setQuestions(data.results.map(q => ({
@@ -281,7 +349,7 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
     
     fetchTriviaQuestions();
     return () => controller.abort();
-}, [category.id, difficulty, token]);
+}, [category, difficulty, token]);
 
   const handleAnswerClick = (answer) => {
     if (isAnswered) return;
@@ -301,7 +369,6 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
     }, 1500);
   };
 
-
   const getButtonClass = (answer) => {
     if (!isAnswered) return 'bg-sky-600 hover:bg-sky-700';
     if (answer === questions[currentQuestionIndex].correct_answer) return 'bg-green-500 hover:bg-green-600';
@@ -319,73 +386,81 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
     return "Better luck next time! Keep learning!";
   };
 
-  const GameContent = () => {
-    if (gameState === 'playing' && questions.length > 0) {
-      return (
-        <div>
-          <h2 className="text-xl md:text-2xl font-bold mb-6 text-center" dangerouslySetInnerHTML={{ __html: questions[currentQuestionIndex].question }} />
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {questions[currentQuestionIndex].answers.map((answer, index) => (
-              <button
-                key={index}
-                onClick={() => handleAnswerClick(answer)}
-                disabled={isAnswered}
-                className={`p-4 rounded-lg text-white font-medium text-lg transition-all duration-300 disabled:cursor-not-allowed ${getButtonClass(answer)}`}
-                dangerouslySetInnerHTML={{ __html: answer }}
-              />
-            ))}
-          </div>
+  const handleGoHome = () => navigate('/');
+
+  if (!category && !loading) {
+    return (
+        <div className="text-center bg-slate-800 p-8 rounded-lg">
+          <h2 className="text-2xl font-bold text-red-500 mb-4">An Error Occurred</h2>
+          <p className="text-slate-400 mb-6">{error || `Category "${categorySlug}" not found.`}</p>
+          <button onClick={handleGoHome} className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-lg text-lg">Back to Home</button>
         </div>
-      );
-    }
-    if (gameState === 'finished') {
-      return (
-        <div className="text-center">
-          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Trivia Complete!</h1>
-          <div className="flex justify-center items-center gap-2 mb-4">
-            <p className="text-slate-400 text-lg">Category: {category.name}</p>
-            <DifficultyBadge difficulty={difficulty} />
-          </div>
-          <p className="text-slate-300 text-2xl mb-2">Your Final Score is:</p>
-          <p className="text-6xl font-extrabold text-sky-400 mb-6">{score} / {questions.length}</p>
-          <p className="text-xl text-slate-400 mb-8">{getResultMessage()}</p>
-          <button onClick={onGameFinish} className="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-transform transform hover:scale-105">Play Another Game</button>
-        </div>
-      );
-    }
-    return null;
-  };
-  
+    );
+  }
+
   if (loading) return <div className="text-center"><h2 className="text-2xl font-bold">Loading Questions...</h2></div>;
   
   if (error) return (
     <div className="text-center bg-slate-800 p-8 rounded-lg">
       <h2 className="text-2xl font-bold text-red-500 mb-4">An Error Occurred</h2>
       <p className="text-slate-400 mb-6">{error}</p>
-      <button onClick={onGameFinish} className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-lg text-lg">Back to Categories</button>
+      <button onClick={handleGoHome} className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-lg text-lg">Back to Home</button>
     </div>
   );
-  
-  return (
-      <div className="bg-slate-800 p-6 md:p-10 rounded-2xl shadow-2xl w-full max-w-3xl mx-auto relative">
-        <div className="flex justify-between items-center mb-2">
-          <span className="text-sky-400 font-bold text-lg">Question {currentQuestionIndex + 1} / {questions.length}</span>
-          <div className="flex items-center gap-4">
-              <DifficultyBadge difficulty={difficulty} />
-              <span className="bg-slate-700 text-white font-bold py-1 px-3 rounded-full">Score: {score}</span>
-          </div>
+
+  if (gameState === 'finished') {
+    return (
+      <div className="text-center">
+        <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Trivia Complete!</h1>
+        <div className="flex justify-center items-center gap-2 mb-4">
+          <p className="text-slate-400 text-lg">Category: {category.name}</p>
+          <DifficultyBadge difficulty={difficulty} />
         </div>
-        <div className="w-full bg-slate-700 rounded-full h-3 mb-6">
-          <div className="bg-sky-500 h-3 rounded-full transition-all duration-300" style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}></div>
-        </div>
-        <GameContent />
+        <p className="text-slate-300 text-2xl mb-2">Your Final Score is:</p>
+        <p className="text-6xl font-extrabold text-sky-400 mb-6">{score} / {questions.length}</p>
+        <p className="text-xl text-slate-400 mb-8">{getResultMessage()}</p>
+        <button onClick={handleGoHome} className="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-transform transform hover:scale-105">Play Another Game</button>
       </div>
+    );
+  }
+
+  return (
+    <div className="bg-slate-800 p-6 md:p-10 rounded-2xl shadow-2xl w-full max-w-3xl mx-auto relative">
+      {questions.length > 0 ? (
+        <>
+            <div className="flex justify-between items-center mb-2">
+                <span className="text-sky-400 font-bold text-lg">Question {currentQuestionIndex + 1} / {questions.length}</span>
+                <div className="flex items-center gap-4">
+                    <DifficultyBadge difficulty={difficulty} />
+                    <span className="bg-slate-700 text-white font-bold py-1 px-3 rounded-full">Score: {score}</span>
+                </div>
+            </div>
+            <div className="w-full bg-slate-700 rounded-full h-3 mb-6">
+                <div className="bg-sky-500 h-3 rounded-full transition-all duration-300" style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}></div>
+            </div>
+            <div>
+                <h2 className="text-xl md:text-2xl font-bold mb-6 text-center" dangerouslySetInnerHTML={{ __html: questions[currentQuestionIndex].question }} />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {questions[currentQuestionIndex].answers.map((answer, index) => (
+                    <button
+                        key={index}
+                        onClick={() => handleAnswerClick(answer)}
+                        disabled={isAnswered}
+                        className={`p-4 rounded-lg text-white font-medium text-lg transition-all duration-300 disabled:cursor-not-allowed ${getButtonClass(answer)}`}
+                        dangerouslySetInnerHTML={{ __html: answer }}
+                    />
+                    ))}
+                </div>
+            </div>
+        </>
+      ) : (
+        <div className="text-center">No questions loaded.</div>
+      )}
+    </div>
   );
 };
 
-// --- Helper Hooks & Functions ---
-
-
+// --- Helper Functions ---
 const decodeHtml = (html) => {
   if (!html) return '';
   const txt = document.createElement("textarea");
