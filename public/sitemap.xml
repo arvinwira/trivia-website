@@ -1,44 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url>
-      <loc>https://www.yourwebsite.com/</loc>
+      <loc>https://simplytrivial.netlify.app/</loc>
       <changefreq>weekly</changefreq>
       <priority>1.0</priority>
    </url>
 
-   <url><loc>https://www.yourwebsite.com/quiz/general-knowledge/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/general-knowledge/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/general-knowledge/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/general-knowledge/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/general-knowledge/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/general-knowledge/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-   <url><loc>https://www.yourwebsite.com/quiz/video-games/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/video-games/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/video-games/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/video-games/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/video-games/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/video-games/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-   <url><loc>https://www.yourwebsite.com/quiz/history/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/history/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/history/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/history/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/history/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/history/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-   <url><loc>https://www.yourwebsite.com/quiz/music/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/music/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/music/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/music/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/music/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/music/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-   <url><loc>https://www.yourwebsite.com/quiz/film/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/film/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/film/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/film/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/film/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/film/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-   <url><loc>https://www.yourwebsite.com/quiz/science-nature/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/science-nature/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/science-nature/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/science-nature/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/science-nature/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/science-nature/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-   <url><loc>https://www.yourwebsite.com/quiz/sports/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/sports/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/sports/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/sports/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/sports/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/sports/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-   <url><loc>https://www.yourwebsite.com/quiz/mythology/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/mythology/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/mythology/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/mythology/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/mythology/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/mythology/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
-   <url><loc>https://www.yourwebsite.com/quiz/animals/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/animals/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-   <url><loc>https://www.yourwebsite.com/quiz/animals/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/animals/easy</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/animals/medium</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+   <url><loc>https://simplytrivial.netlify.app/quiz/animals/hard</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
