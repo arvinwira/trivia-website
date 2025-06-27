@@ -95,7 +95,7 @@ export default function App() {
     const controller = new AbortController();
     const fetchToken = async () => {
       try {
-        const response = await fetch('https://opentdb.com/api_token.php?command=request', { signal: controller.signal });
+        const response = await fetch('/api/api_token.php?command=request', { signal: controller.signal });
         const data = await response.json();
         if (data.response_code === 0) setToken(data.token);
         else console.error("Could not fetch session token.");
@@ -107,7 +107,7 @@ export default function App() {
     };
     fetchToken();
     return () => controller.abort();
-  }, []);
+}, []);
 
   const handleGameStart = (options) => {
     setGameOptions(options);
@@ -208,7 +208,7 @@ const HomePage = ({ onGameStart, tokenLoading }) => {
         <div className="mt-16 pt-8 border-t border-slate-700/50 max-w-4xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">The Ultimate Online Trivia Destination</h3>
             <p className="text-slate-400 leading-relaxed">
-                Welcome to Simply Trivial, your new home for free online trivia and quiz questions! Test your knowledge across a huge range of categories including General Knowledge, History, Music, Film, Video Games, and more. Choose your difficulty from easy, medium, or hard and see how you rank. Our quiz game is perfect for a quick brain teaser or a challenging test of your expertise. Play now for free!
+                Welcome to Simply Trivial, your new home for free online trivia and quiz questions! Test your knowledge across a huge range of categories including General Knowledge, History, Music, Film, Video Games, and more. Choose your difficulty from easy, medium, or hard. Our quiz game is perfect for a quick brain teaser or a challenging test of your expertise. Play now for free!
             </p>
         </div>
       </div>
@@ -228,7 +228,6 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const { Confetti: EndGameConfetti, startConfetti: startEndGameConfetti } = useConfetti();
   
   const title = `${category.name} Quiz - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} | Simply Trivial`;
   const description = `Test your knowledge with our ${difficulty} ${category.name} trivia quiz. Play for free now!`;
@@ -245,14 +244,25 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
       setLoading(true);
       setError(null);
       try {
-        const url = `https://opentdb.com/api.php?amount=10&category=${category.id}&difficulty=${difficulty}&type=multiple&token=${token}`;
+        const url = `/api/api.php?amount=10&category=${category.id}&difficulty=${difficulty}&type=multiple&token=${token}`;
         const response = await fetch(url, { signal: controller.signal });
         if (!response.ok) throw new Error('Failed to connect to the trivia server.');
         
         const data = await response.json();
         
-        if (data.response_code === 1) throw new Error("The API doesn't have enough questions for this category/difficulty. Please try another combination.");
-        if (data.response_code > 1) throw new Error("An API error occurred. Please return to the main menu.");
+        if (data.response_code === 1) {
+            throw new Error("The API doesn't have enough questions for this category/difficulty. Please try another combination.");
+        } 
+        else if (data.response_code === 2) {
+            throw new Error("The request contains invalid parameters. Please try again.");
+        }
+        else if (data.response_code === 3 || data.response_code === 4) {
+            throw new Error("There was a session token error. Please return to the main menu to refresh the session.");
+        }
+        else if (data.response_code === 5) {
+            throw new Error("Too many requests have been made in a short time. Please wait a moment and try again.");
+        }
+
   
         if (!controller.signal.aborted) {
           setQuestions(data.results.map(q => ({
@@ -271,7 +281,7 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
     
     fetchTriviaQuestions();
     return () => controller.abort();
-  }, [category.id, difficulty, token]);
+}, [category.id, difficulty, token]);
 
   const handleAnswerClick = (answer) => {
     if (isAnswered) return;
@@ -291,13 +301,6 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
     }, 1500);
   };
 
-  useEffect(() => {
-    if (gameState === 'finished' && questions.length > 0) {
-      if ((score / questions.length) * 100 > 60) {
-        startEndGameConfetti();
-      }
-    }
-  }, [gameState, score, questions.length, startEndGameConfetti]);
 
   const getButtonClass = (answer) => {
     if (!isAnswered) return 'bg-sky-600 hover:bg-sky-700';
@@ -365,7 +368,6 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
   
   return (
       <div className="bg-slate-800 p-6 md:p-10 rounded-2xl shadow-2xl w-full max-w-3xl mx-auto relative">
-        <EndGameConfetti />
         <div className="flex justify-between items-center mb-2">
           <span className="text-sky-400 font-bold text-lg">Question {currentQuestionIndex + 1} / {questions.length}</span>
           <div className="flex items-center gap-4">
@@ -382,37 +384,7 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
 };
 
 // --- Helper Hooks & Functions ---
-const useConfetti = () => {
-  const [isConfettiActive, setConfettiActive] = useState(false);
-  const startConfetti = useCallback(() => {
-    setConfettiActive(true);
-    setTimeout(() => setConfettiActive(false), 4000);
-  }, []);
 
-  const Confetti = useMemo(() => {
-    const MemoizedConfetti = React.memo(() => {
-      if (!isConfettiActive) return null;
-      const confettiPieces = Array.from({ length: 150 }).map((_, i) => ({
-        id: i,
-        color: ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800'][Math.floor(Math.random() * 15)],
-        left: `${Math.random() * 100}%`,
-        animationDuration: `${Math.random() * 3 + 2}s`,
-        animationDelay: `${Math.random() * 2}s`,
-      }));
-      return (
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-50 pointer-events-none">
-          {confettiPieces.map(p => (
-            <div key={p.id} className="absolute w-2 h-4" style={{ backgroundColor: p.color, left: p.left, animation: `fall ${p.animationDuration} linear ${p.animationDelay} infinite` }} />
-          ))}
-        </div>
-      );
-    });
-    MemoizedConfetti.displayName = 'MemoizedConfetti';
-    return MemoizedConfetti;
-  }, [isConfettiActive]);
-
-  return { Confetti, startConfetti };
-};
 
 const decodeHtml = (html) => {
   if (!html) return '';
