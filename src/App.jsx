@@ -10,13 +10,11 @@ const useDocumentMeta = (title, description, schemaData) => {
       metaDescription.setAttribute('content', description);
     }
     
-    // Remove existing schema script if any
     const existingScript = document.getElementById('schema-json');
     if (existingScript) {
       existingScript.remove();
     }
 
-    // Add new schema script
     if (schemaData) {
       const script = document.createElement('script');
       script.id = 'schema-json';
@@ -27,70 +25,37 @@ const useDocumentMeta = (title, description, schemaData) => {
   }, [title, description, schemaData]);
 };
 
-// Icons
+
+// --- Icon Components (Inline SVG for Coloring) ---
 const IconGeneral = () => (
-  <img 
-    src="/icons/general.svg" 
-    alt="General Knowledge Icon" 
-    className="w-12 h-12 mx-auto mb-4" 
-  />
+  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
 );
 const IconGamepad = () => (
-  <img 
-    src="/icons/gamepad.svg" 
-    alt="Video Games Icon" 
-    className="w-12 h-12 mx-auto mb-4" 
-  />
+  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 17l-5-5a2 2 0 112.828-2.828L11 11.172l5.172-5.172a2 2 0 112.828 2.828L13 15V5a2 2 0 00-4 0v10z M6 13a2 2 0 110-4 2 2 0 010 4z M18 13a2 2 0 110-4 2 2 0 010 4z"></path></svg>
 );
 const IconHistory = () => (
-  <img 
-    src="/icons/history.svg" 
-    alt="History Icon" 
-    className="w-12 h-12 mx-auto mb-4" 
-  />
+  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6.253v11.494m-9-8.494h18M5 12.747h14M4 15.253h16M3 17.747h18"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16v12H4z"></path></svg>
 );
 const IconMusic = () => (
-  <img 
-    src="/icons/music.svg" 
-    alt="Music Icon" 
-    className="w-12 h-12 mx-auto mb-4" 
-  />
+  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19V6l10-3v13M9 19a4 4 0 11-4-4 4 4 0 014 4zm10-13a4 4 0 11-4-4 4 4 0 014 4z"></path></svg>
 );
 const IconFilm = () => (
-  <img 
-    src="/icons/film.svg" 
-    alt="Film Icon" 
-    className="w-12 h-12 mx-auto mb-4" 
-  />
+  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 4h16v16H4z"></path></svg>
 );
 const IconScience = () => (
-  <img 
-    src="/icons/science.svg" 
-    alt="Science & Nature Icon" 
-    className="w-12 h-12 mx-auto mb-4" 
-  />
+  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 21a9 9 0 100-18 9 9 0 000 18z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3a9 9 0 015.657 15.343A9 9 0 016.343 8.657 9 9 0 0112 3z"></path><path d="M12 12s2.121-5.657 6-6M12 12s-5.657 2.121-6 6"></path></svg>
 );
 const IconSports = () => (
-  <img 
-    src="/icons/sports.svg" 
-    alt="Sports Icon" 
-    className="w-12 h-12 mx-auto mb-4" 
-  />
+  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
 );
 const IconMythology = () => (
-  <img 
-    src="/icons/mythology.svg" 
-    alt="Mythology Icon" 
-    className="w-12 h-12 mx-auto mb-4" 
-  />
+    <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
 );
 const IconAnimals = () => (
-  <img 
-    src="/icons/animals.svg" 
-    alt="Animals Icon" 
-    className="w-12 h-12 mx-auto mb-4" 
-  />
+    <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.5 9.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 15h6a1 1 0 011 1v1a3 3 0 01-3 3H8a3 3 0 01-3-3v-1a1 1 0 011-1z"></path><path d="M9 9h.01M15 9h.01"></path></svg>
 );
+
+
 // --- DifficultyBadge Component ---
 const DifficultyBadge = ({ difficulty }) => {
   const badgeClasses = {
@@ -132,7 +97,8 @@ const Layout = ({ children, onGoHome }) => {
   );
 };
 
-// --- Main App Component (Refactored for React Router) ---
+
+// --- Main App Component ---
 export default function App() {
   const [token, setToken] = useState('');
   const [tokenLoading, setTokenLoading] = useState(true);
@@ -141,8 +107,11 @@ export default function App() {
   useEffect(() => {
     const controller = new AbortController();
     const fetchToken = async () => {
+      const baseUrl = import.meta.env.PROD ? 'https://opentdb.com' : '/api';
+      const url = `${baseUrl}/api_token.php?command=request`;
+
       try {
-        const response = await fetch('/api/api_token.php?command=request', { signal: controller.signal });
+        const response = await fetch(url, { signal: controller.signal });
         const data = await response.json();
         if (data.response_code === 0) setToken(data.token);
         else console.error("Could not fetch session token.");
@@ -169,11 +138,11 @@ export default function App() {
 // --- Helper function to create URL-friendly slugs ---
 const slugify = (text) => {
   return text.toString().toLowerCase()
-    .replace(/\s+/g, '-')           // Replace spaces with -
-    .replace(/[^\w\-]+/g, '')       // Remove all non-word chars
-    .replace(/\-\-+/g, '-')         // Replace multiple - with single -
-    .replace(/^-+/, '')             // Trim - from start of text
-    .replace(/-+$/, '');            // Trim - from end of text
+    .replace(/\s+/g, '-')
+    .replace(/[^\w\-]+/g, '')
+    .replace(/\-\-+/g, '-')
+    .replace(/^-+/, '')
+    .replace(/-+$/, '');
 };
 
 const allCategories = [
@@ -198,7 +167,6 @@ const HomePage = ({ tokenLoading }) => {
   );
 
   const difficulties = ['Easy', 'Medium', 'Hard'];
-
   const difficultyButtonClasses = {
       Easy: 'bg-green-600 hover:bg-green-700',
       Medium: 'bg-yellow-500 hover:bg-yellow-600',
@@ -305,7 +273,7 @@ const TriviaGame = ({ token }) => {
         return;
     }
     if (!token) {
-        setError("Missing API session token.");
+        setError("Missing API session token. Please return to the main menu to refresh the session.");
         setLoading(false);
         return;
     }
@@ -315,7 +283,9 @@ const TriviaGame = ({ token }) => {
       setLoading(true);
       setError(null);
       try {
-        const url = `/api/api.php?amount=10&category=${category.id}&difficulty=${difficulty}&type=multiple&token=${token}`;
+        const baseUrl = import.meta.env.PROD ? 'https://opentdb.com' : '/api';
+        const url = `${baseUrl}/api.php?amount=10&category=${category.id}&difficulty=${difficulty}&type=multiple&token=${token}`;
+        
         const response = await fetch(url, { signal: controller.signal });
         if (!response.ok) throw new Error('Failed to connect to the trivia server.');
         
@@ -378,7 +348,7 @@ const TriviaGame = ({ token }) => {
   
   const getResultMessage = () => {
     if (questions.length === 0 && !loading) return "No questions were loaded.";
-    const percentage = (score / questions.length) * 100;
+    const percentage = score > 0 ? (score / questions.length) * 100 : 0;
     if (percentage === 100) return "Perfect Score! You're a Trivia Master!";
     if (percentage >= 80) return "Excellent Job! You really know your stuff!";
     if (percentage >= 60) return "Great Work! You did very well!";
@@ -454,11 +424,12 @@ const TriviaGame = ({ token }) => {
             </div>
         </>
       ) : (
-        <div className="text-center">No questions loaded.</div>
+        <div className="text-center">No questions loaded for this category. Please try another one.</div>
       )}
     </div>
   );
 };
+
 
 // --- Helper Functions ---
 const decodeHtml = (html) => {
