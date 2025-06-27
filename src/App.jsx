@@ -1,5 +1,18 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
+// --- Custom Hook for SEO ---
+// This hook directly updates the page title and meta description.
+const useDocumentMeta = (title, description) => {
+  useEffect(() => {
+    document.title = title;
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute('content', description);
+    }
+  }, [title, description]);
+};
+
+
 // --- Icon Components ---
 const IconGeneral = () => (
   <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
@@ -52,7 +65,7 @@ const Layout = ({ children, onGoHome }) => {
       <header className="bg-slate-800 shadow-lg">
         <nav className="container mx-auto px-6 py-4">
           <h1 onClick={onGoHome} className="text-3xl font-bold text-white font-display cursor-pointer transition-colors hover:text-sky-400">
-            Simply Trivial!
+            Simply Trivial
           </h1>
         </nav>
       </header>
@@ -64,7 +77,7 @@ const Layout = ({ children, onGoHome }) => {
       </main>
 
       <footer className="bg-slate-800 py-6 text-center text-slate-400">
-        <p>&copy; {new Date().getFullYear()} Simply Trivial!. All Rights Reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Simply Trivial. All Rights Reserved.</p>
       </footer>
     </div>
   );
@@ -117,6 +130,11 @@ export default function App() {
 // --- HomePage Component ---
 const HomePage = ({ onGameStart, tokenLoading }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  
+  useDocumentMeta(
+    'Simply Trivial - FREE Trivia Quiz Game',
+    'Challenge your knowledge with a free trivia quiz game. Choose from dozens of categories like History, Music, Science, and more!'
+  );
 
   const categories = [
     { id: 9, name: 'General Knowledge', icon: <IconGeneral /> },
@@ -136,7 +154,6 @@ const HomePage = ({ onGameStart, tokenLoading }) => {
     onGameStart({ category: selectedCategory, difficulty: difficulty.toLowerCase() });
   };
   
-  // Object to map difficulties to their button classes
   const difficultyButtonClasses = {
       Easy: 'bg-green-600 hover:bg-green-700',
       Medium: 'bg-yellow-500 hover:bg-yellow-600',
@@ -171,23 +188,30 @@ const HomePage = ({ onGameStart, tokenLoading }) => {
   }
 
   return (
-    <div className="text-center">
-      <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 font-display">Test Your Knowledge</h2>
-      <p className="text-slate-400 mb-12 text-lg">Select a category to start the challenge.</p>
-      
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-        {categories.map((cat) => (
-          <button
-            key={cat.id}
-            onClick={() => setSelectedCategory(cat)}
-            className="bg-slate-800 p-6 rounded-lg text-white font-semibold text-lg transition-all duration-300 transform hover:bg-sky-600 hover:-translate-y-2 shadow-lg"
-          >
-            {cat.icon}
-            {cat.name}
-          </button>
-        ))}
+      <div className="text-center">
+        <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 font-display">Test Your Knowledge</h2>
+        <p className="text-slate-400 mb-12 text-lg">Select a category to start the challenge.</p>
+        
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {categories.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat)}
+              className="bg-slate-800 p-6 rounded-lg text-white font-semibold text-lg transition-all duration-300 transform hover:bg-sky-600 hover:-translate-y-2 shadow-lg"
+            >
+              {cat.icon}
+              {cat.name}
+            </button>
+          ))}
+        </div>
+
+        <div className="mt-16 pt-8 border-t border-slate-700/50 max-w-4xl mx-auto">
+            <h3 className="text-2xl font-bold text-white mb-4">The Ultimate Online Trivia Destination</h3>
+            <p className="text-slate-400 leading-relaxed">
+                Welcome to Simply Trivial, your new home for free online trivia and quiz questions! Test your knowledge across a huge range of categories including General Knowledge, History, Music, Film, Video Games, and more. Choose your difficulty from easy, medium, or hard and see how you rank. Our quiz game is perfect for a quick brain teaser or a challenging test of your expertise. Play now for free!
+            </p>
+        </div>
       </div>
-    </div>
   );
 };
 
@@ -204,7 +228,11 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const { Confetti, startConfetti } = useConfetti();
+  const { Confetti: EndGameConfetti, startConfetti: startEndGameConfetti } = useConfetti();
+  
+  const title = `${category.name} Quiz - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} | Simply Trivial`;
+  const description = `Test your knowledge with our ${difficulty} ${category.name} trivia quiz. Play for free now!`;
+  useDocumentMeta(title, description);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -266,10 +294,10 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
   useEffect(() => {
     if (gameState === 'finished' && questions.length > 0) {
       if ((score / questions.length) * 100 > 60) {
-        startConfetti();
+        startEndGameConfetti();
       }
     }
-  }, [gameState, score, questions.length, startConfetti]);
+  }, [gameState, score, questions.length, startEndGameConfetti]);
 
   const getButtonClass = (answer) => {
     if (!isAnswered) return 'bg-sky-600 hover:bg-sky-700';
@@ -336,20 +364,20 @@ const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
   );
   
   return (
-    <div className="bg-slate-800 p-6 md:p-10 rounded-2xl shadow-2xl w-full max-w-3xl mx-auto">
-      <Confetti />
-      <div className="flex justify-between items-center mb-2">
-        <span className="text-sky-400 font-bold text-lg">Question {currentQuestionIndex + 1} / {questions.length}</span>
-        <div className="flex items-center gap-4">
-            <DifficultyBadge difficulty={difficulty} />
-            <span className="bg-slate-700 text-white font-bold py-1 px-3 rounded-full">Score: {score}</span>
+      <div className="bg-slate-800 p-6 md:p-10 rounded-2xl shadow-2xl w-full max-w-3xl mx-auto relative">
+        <EndGameConfetti />
+        <div className="flex justify-between items-center mb-2">
+          <span className="text-sky-400 font-bold text-lg">Question {currentQuestionIndex + 1} / {questions.length}</span>
+          <div className="flex items-center gap-4">
+              <DifficultyBadge difficulty={difficulty} />
+              <span className="bg-slate-700 text-white font-bold py-1 px-3 rounded-full">Score: {score}</span>
+          </div>
         </div>
+        <div className="w-full bg-slate-700 rounded-full h-3 mb-6">
+          <div className="bg-sky-500 h-3 rounded-full transition-all duration-300" style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}></div>
+        </div>
+        <GameContent />
       </div>
-      <div className="w-full bg-slate-700 rounded-full h-3 mb-6">
-        <div className="bg-sky-500 h-3 rounded-full transition-all duration-300" style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}></div>
-      </div>
-      <GameContent />
-    </div>
   );
 };
 
