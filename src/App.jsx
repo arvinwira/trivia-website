@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react';
 
+// --- Icon Components ---
 const IconGeneral = () => (
   <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
 );
@@ -18,11 +19,62 @@ const IconFilm = () => (
 const IconScience = () => (
   <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 21a9 9 0 100-18 9 9 0 000 18z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 3a9 9 0 015.657 15.343A9 9 0 016.343 8.657 9 9 0 0112 3z"></path><path d="M12 12s2.121-5.657 6-6M12 12s-5.657 2.121-6 6"></path></svg>
 );
+const IconSports = () => (
+  <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+);
+const IconMythology = () => (
+    <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+);
+const IconAnimals = () => (
+    <svg className="w-12 h-12 mx-auto mb-4 text-sky-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14.5 9.5a3.5 3.5 0 11-7 0 3.5 3.5 0 017 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 15h6a1 1 0 011 1v1a3 3 0 01-3 3H8a3 3 0 01-3-3v-1a1 1 0 011-1z"></path><path d="M9 9h.01M15 9h.01"></path></svg>
+);
+
+// --- DifficultyBadge Component ---
+const DifficultyBadge = ({ difficulty }) => {
+  const badgeClasses = {
+    easy: 'bg-green-500/20 text-green-300',
+    medium: 'bg-yellow-500/20 text-yellow-300',
+    hard: 'bg-red-500/20 text-red-300',
+  };
+
+  return (
+    <span className={`px-3 py-1 text-xs font-bold rounded-full capitalize ${badgeClasses[difficulty] || 'bg-gray-500/20 text-gray-300'}`}>
+      {difficulty}
+    </span>
+  );
+};
 
 
+// --- Layout Component ---
+const Layout = ({ children, onGoHome }) => {
+  return (
+    <div className="bg-slate-900 text-white min-h-screen flex flex-col font-sans">
+      <header className="bg-slate-800 shadow-lg">
+        <nav className="container mx-auto px-6 py-4">
+          <h1 onClick={onGoHome} className="text-3xl font-bold text-white font-display cursor-pointer transition-colors hover:text-sky-400">
+            Simply Trivial!
+          </h1>
+        </nav>
+      </header>
+      
+      <main className="flex-grow container mx-auto px-6 py-12 flex items-center">
+        <div className="w-full">
+          {children}
+        </div>
+      </main>
+
+      <footer className="bg-slate-800 py-6 text-center text-slate-400">
+        <p>&copy; {new Date().getFullYear()} Simply Trivial!. All Rights Reserved.</p>
+      </footer>
+    </div>
+  );
+};
+
+
+// --- Main App Component ---
 export default function App() {
   const [view, setView] = useState('home'); 
-  const [category, setCategory] = useState(null); 
+  const [gameOptions, setGameOptions] = useState(null); 
   const [token, setToken] = useState('');
   const [tokenLoading, setTokenLoading] = useState(true);
 
@@ -32,47 +84,40 @@ export default function App() {
       try {
         const response = await fetch('https://opentdb.com/api_token.php?command=request', { signal: controller.signal });
         const data = await response.json();
-        if (data.response_code === 0) {
-          setToken(data.token);
-        } else {
-          console.error("Could not fetch session token.");
-        }
+        if (data.response_code === 0) setToken(data.token);
+        else console.error("Could not fetch session token.");
       } catch (err) {
-        if (err.name !== 'AbortError') {
-          console.error("Failed to connect to trivia API to get token.", err);
-        }
+        if (err.name !== 'AbortError') console.error("API token fetch failed:", err);
       } finally {
-        setTokenLoading(false);
+        if (!controller.signal.aborted) setTokenLoading(false);
       }
     };
     fetchToken();
-    
-    return () => {
-      controller.abort();
-    };
+    return () => controller.abort();
   }, []);
 
-  const handleCategorySelect = (selectedCategory) => {
-    setCategory(selectedCategory);
+  const handleGameStart = (options) => {
+    setGameOptions(options);
     setView('playing');
   };
 
   const handleGameFinish = () => {
     setView('home');
-    setCategory(null);
+    setGameOptions(null);
   };
 
   return (
-    <div className="bg-slate-900 text-white min-h-screen flex items-center justify-center p-4 font-sans">
-      <div className="w-full max-w-2xl mx-auto">
-        {view === 'home' && <HomePage onCategorySelect={handleCategorySelect} tokenLoading={tokenLoading} />}
-        {view === 'playing' && <TriviaGame category={category} token={token} onGameFinish={handleGameFinish} />}
-      </div>
-    </div>
+    <Layout onGoHome={handleGameFinish}>
+      {view === 'home' && <HomePage onGameStart={handleGameStart} tokenLoading={tokenLoading} />}
+      {view === 'playing' && <TriviaGame gameOptions={gameOptions} token={token} onGameFinish={handleGameFinish} />}
+    </Layout>
   );
 }
 
-const HomePage = ({ onCategorySelect, tokenLoading }) => {
+// --- HomePage Component ---
+const HomePage = ({ onGameStart, tokenLoading }) => {
+  const [selectedCategory, setSelectedCategory] = useState(null);
+
   const categories = [
     { id: 9, name: 'General Knowledge', icon: <IconGeneral /> },
     { id: 15, name: 'Video Games', icon: <IconGamepad /> },
@@ -80,34 +125,76 @@ const HomePage = ({ onCategorySelect, tokenLoading }) => {
     { id: 12, name: 'Music', icon: <IconMusic /> },
     { id: 11, name: 'Film', icon: <IconFilm /> },
     { id: 17, name: 'Science & Nature', icon: <IconScience /> },
+    { id: 21, name: 'Sports', icon: <IconSports /> },
+    { id: 20, name: 'Mythology', icon: <IconMythology /> },
+    { id: 27, name: 'Animals', icon: <IconAnimals /> },
   ];
+
+  const difficulties = ['Easy', 'Medium', 'Hard'];
+
+  const handleDifficultySelect = (difficulty) => {
+    onGameStart({ category: selectedCategory, difficulty: difficulty.toLowerCase() });
+  };
+  
+  // Object to map difficulties to their button classes
+  const difficultyButtonClasses = {
+      Easy: 'bg-green-600 hover:bg-green-700',
+      Medium: 'bg-yellow-500 hover:bg-yellow-600',
+      Hard: 'bg-red-600 hover:bg-red-700',
+  };
+
+  if (tokenLoading) {
+    return <div className="text-center"><p className="text-lg">Connecting to Trivia Server...</p></div>;
+  }
+  
+  if (selectedCategory) {
+    return (
+        <div className="text-center">
+            <h2 className="text-4xl font-bold font-display mb-2">Category: {selectedCategory.name}</h2>
+            <p className="text-slate-400 mb-8 text-lg">Now, select a difficulty.</p>
+            <div className="flex justify-center gap-4 mb-8">
+                {difficulties.map(diff => (
+                    <button 
+                        key={diff} 
+                        onClick={() => handleDifficultySelect(diff)} 
+                        className={`${difficultyButtonClasses[diff]} text-white font-bold py-3 px-8 rounded-lg text-xl transition-transform transform hover:scale-105`}
+                    >
+                        {diff}
+                    </button>
+                ))}
+            </div>
+            <button onClick={() => setSelectedCategory(null)} className="text-slate-400 hover:text-white transition">
+                &larr; Back to Categories
+            </button>
+        </div>
+    );
+  }
 
   return (
     <div className="text-center">
-      <h1 className="text-5xl md:text-6xl font-bold text-white mb-4 font-display">Trivia Fun!</h1>
+      <h2 className="text-5xl md:text-6xl font-bold text-white mb-4 font-display">Test Your Knowledge</h2>
       <p className="text-slate-400 mb-12 text-lg">Select a category to start the challenge.</p>
-      {tokenLoading ? (
-        <p>Connecting to Trivia Server...</p>
-      ) : (
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {categories.map((cat) => (
-            <button
-              key={cat.id}
-              onClick={() => onCategorySelect(cat)}
-              className="bg-slate-800 p-6 rounded-lg text-white font-semibold text-lg transition-all duration-300 transform hover:bg-sky-600 hover:-translate-y-2"
-            >
-              {cat.icon}
-              {cat.name}
-            </button>
-          ))}
-        </div>
-      )}
+      
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        {categories.map((cat) => (
+          <button
+            key={cat.id}
+            onClick={() => setSelectedCategory(cat)}
+            className="bg-slate-800 p-6 rounded-lg text-white font-semibold text-lg transition-all duration-300 transform hover:bg-sky-600 hover:-translate-y-2 shadow-lg"
+          >
+            {cat.icon}
+            {cat.name}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };
 
 
-const TriviaGame = ({ category, token, onGameFinish }) => {
+// --- TriviaGame Component ---
+const TriviaGame = ({ gameOptions, token, onGameFinish }) => {
+  const { category, difficulty } = gameOptions;
   const [questions, setQuestions] = useState([]);
   const [gameState, setGameState] = useState('playing'); 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -119,53 +206,44 @@ const TriviaGame = ({ category, token, onGameFinish }) => {
 
   const { Confetti, startConfetti } = useConfetti();
 
-  // This useEffect now correctly handles cleanup to prevent race conditions.
   useEffect(() => {
-    // Create a controller for this specific fetch call
     const controller = new AbortController();
-
     const fetchTriviaQuestions = async () => {
       if (!token) {
-          setLoading(false);
-          setError("Missing an API session token. Please return to the homepage.");
-          return;
+        setError("Missing API session token.");
+        setLoading(false);
+        return;
       }
-  
       setLoading(true);
       setError(null);
       try {
-        const url = `https://opentdb.com/api.php?amount=10&category=${category.id}&type=multiple&token=${token}`;
+        const url = `https://opentdb.com/api.php?amount=10&category=${category.id}&difficulty=${difficulty}&type=multiple&token=${token}`;
         const response = await fetch(url, { signal: controller.signal });
-        if (!response.ok) throw new Error('Failed to connect to the trivia server. Check your internet connection.');
+        if (!response.ok) throw new Error('Failed to connect to the trivia server.');
         
         const data = await response.json();
         
-        if (data.response_code === 1) throw new Error("The API doesn't have enough questions for this category. Please try another one.");
-        if (data.response_code === 3 || data.response_code === 4) throw new Error("Your trivia session has expired. Please return to the main menu.");
-        if (data.response_code !== 0) throw new Error("An unknown error occurred while fetching questions.");
+        if (data.response_code === 1) throw new Error("The API doesn't have enough questions for this category/difficulty. Please try another combination.");
+        if (data.response_code > 1) throw new Error("An API error occurred. Please return to the main menu.");
   
-        setQuestions(data.results.map(q => ({
-          ...q,
-          answers: [...q.incorrect_answers, q.correct_answer].sort(() => Math.random() - 0.5).map(decodeHtml),
-          correct_answer: decodeHtml(q.correct_answer),
-          question: decodeHtml(q.question)
-        })));
-
-      } catch (err) {
-        if (err.name !== 'AbortError') {
-          setError(err.message);
+        if (!controller.signal.aborted) {
+          setQuestions(data.results.map(q => ({
+            ...q,
+            answers: [...q.incorrect_answers, q.correct_answer].sort(() => Math.random() - 0.5).map(decodeHtml),
+            correct_answer: decodeHtml(q.correct_answer),
+            question: decodeHtml(q.question)
+          })));
         }
+      } catch (err) {
+        if (err.name !== 'AbortError') setError(err.message);
       } finally {
-        setLoading(false);
+        if (!controller.signal.aborted) setLoading(false);
       }
     };
     
     fetchTriviaQuestions();
-
-    return () => {
-      controller.abort();
-    };
-  }, [category.id, token]); 
+    return () => controller.abort();
+  }, [category.id, difficulty, token]);
 
   const handleAnswerClick = (answer) => {
     if (isAnswered) return;
@@ -201,7 +279,7 @@ const TriviaGame = ({ category, token, onGameFinish }) => {
   };
   
   const getResultMessage = () => {
-    if (questions.length === 0) return "No questions were loaded.";
+    if (questions.length === 0 && !loading) return "No questions were loaded.";
     const percentage = (score / questions.length) * 100;
     if (percentage === 100) return "Perfect Score! You're a Trivia Master!";
     if (percentage >= 80) return "Excellent Job! You really know your stuff!";
@@ -210,70 +288,74 @@ const TriviaGame = ({ category, token, onGameFinish }) => {
     return "Better luck next time! Keep learning!";
   };
 
-  if (loading) {
-    return <div className="text-center"><h2 className="text-2xl font-bold">Loading Questions for {category.name}...</h2></div>;
-  }
-
-  if (error) {
-    return (
-      <div className="text-center bg-slate-800 p-8 rounded-lg">
-        <h2 className="text-2xl font-bold text-red-500 mb-4">An Error Occurred</h2>
-        <p className="text-slate-400 mb-6">{error}</p>
-        <button onClick={onGameFinish} className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-lg text-lg">Back to Categories</button>
-      </div>
-    );
-  }
-
+  const GameContent = () => {
+    if (gameState === 'playing' && questions.length > 0) {
+      return (
+        <div>
+          <h2 className="text-xl md:text-2xl font-bold mb-6 text-center" dangerouslySetInnerHTML={{ __html: questions[currentQuestionIndex].question }} />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {questions[currentQuestionIndex].answers.map((answer, index) => (
+              <button
+                key={index}
+                onClick={() => handleAnswerClick(answer)}
+                disabled={isAnswered}
+                className={`p-4 rounded-lg text-white font-medium text-lg transition-all duration-300 disabled:cursor-not-allowed ${getButtonClass(answer)}`}
+                dangerouslySetInnerHTML={{ __html: answer }}
+              />
+            ))}
+          </div>
+        </div>
+      );
+    }
+    if (gameState === 'finished') {
+      return (
+        <div className="text-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Trivia Complete!</h1>
+          <div className="flex justify-center items-center gap-2 mb-4">
+            <p className="text-slate-400 text-lg">Category: {category.name}</p>
+            <DifficultyBadge difficulty={difficulty} />
+          </div>
+          <p className="text-slate-300 text-2xl mb-2">Your Final Score is:</p>
+          <p className="text-6xl font-extrabold text-sky-400 mb-6">{score} / {questions.length}</p>
+          <p className="text-xl text-slate-400 mb-8">{getResultMessage()}</p>
+          <button onClick={onGameFinish} className="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-transform transform hover:scale-105">Play Another Game</button>
+        </div>
+      );
+    }
+    return null;
+  };
+  
+  if (loading) return <div className="text-center"><h2 className="text-2xl font-bold">Loading Questions...</h2></div>;
+  
+  if (error) return (
+    <div className="text-center bg-slate-800 p-8 rounded-lg">
+      <h2 className="text-2xl font-bold text-red-500 mb-4">An Error Occurred</h2>
+      <p className="text-slate-400 mb-6">{error}</p>
+      <button onClick={onGameFinish} className="bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-6 rounded-lg text-lg">Back to Categories</button>
+    </div>
+  );
+  
   return (
-    <>
+    <div className="bg-slate-800 p-6 md:p-10 rounded-2xl shadow-2xl w-full max-w-3xl mx-auto">
       <Confetti />
-      <div className="bg-slate-800 p-6 md:p-10 rounded-2xl shadow-2xl">
-        {gameState === 'playing' && questions.length > 0 && (
-          <div>
-            <div className="mb-6">
-              <div className="flex justify-between items-center mb-2">
-                <span className="text-sky-400 font-bold text-lg">Question {currentQuestionIndex + 1} / {questions.length}</span>
-                <span className="bg-slate-700 text-white font-bold py-1 px-3 rounded-full">Score: {score}</span>
-              </div>
-              <div className="w-full bg-slate-700 rounded-full h-3">
-                <div className="bg-sky-500 h-3 rounded-full transition-all duration-300" style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}></div>
-              </div>
-            </div>
-            <h2 className="text-xl md:text-2xl font-bold mb-6 text-center">{questions[currentQuestionIndex].question}</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {questions[currentQuestionIndex].answers.map((answer, index) => (
-                <button
-                  key={index}
-                  onClick={() => handleAnswerClick(answer)}
-                  disabled={isAnswered}
-                  className={`p-4 rounded-lg text-white font-medium text-lg transition-all duration-300 disabled:cursor-not-allowed ${getButtonClass(answer)}`}
-                >
-                  {answer}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {gameState === 'finished' && (
-          <div className="text-center">
-            <h1 className="text-3xl md:text-4xl font-bold text-white mb-2">Trivia Complete!</h1>
-            <p className="text-slate-400 text-lg mb-4">Category: {category.name}</p>
-            <p className="text-slate-300 text-2xl mb-2">Your Final Score is:</p>
-            <p className="text-6xl font-extrabold text-sky-400 mb-6">{score} / {questions.length}</p>
-            <p className="text-xl text-slate-400 mb-8">{getResultMessage()}</p>
-            <button onClick={onGameFinish} className="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 px-8 rounded-lg text-xl transition-transform transform hover:scale-105">Play Another Category</button>
-          </div>
-        )}
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-sky-400 font-bold text-lg">Question {currentQuestionIndex + 1} / {questions.length}</span>
+        <div className="flex items-center gap-4">
+            <DifficultyBadge difficulty={difficulty} />
+            <span className="bg-slate-700 text-white font-bold py-1 px-3 rounded-full">Score: {score}</span>
+        </div>
       </div>
-    </>
+      <div className="w-full bg-slate-700 rounded-full h-3 mb-6">
+        <div className="bg-sky-500 h-3 rounded-full transition-all duration-300" style={{ width: `${((currentQuestionIndex + 1) / questions.length) * 100}%` }}></div>
+      </div>
+      <GameContent />
+    </div>
   );
 };
 
-
+// --- Helper Hooks & Functions ---
 const useConfetti = () => {
   const [isConfettiActive, setConfettiActive] = useState(false);
-
   const startConfetti = useCallback(() => {
     setConfettiActive(true);
     setTimeout(() => setConfettiActive(false), 4000);
@@ -281,21 +363,21 @@ const useConfetti = () => {
 
   const Confetti = useMemo(() => {
     const MemoizedConfetti = React.memo(() => {
-        if (!isConfettiActive) return null;
-        const confettiPieces = Array.from({ length: 150 }).map((_, i) => ({
-          id: i,
-          color: ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800'][Math.floor(Math.random() * 15)],
-          left: `${Math.random() * 100}%`,
-          animationDuration: `${Math.random() * 3 + 2}s`,
-          animationDelay: `${Math.random() * 2}s`,
-        }));
-        return (
-          <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-50 pointer-events-none">
-            {confettiPieces.map(p => (
-              <div key={p.id} className="absolute w-2 h-4" style={{ backgroundColor: p.color, left: p.left, animation: `fall ${p.animationDuration} linear ${p.animationDelay} infinite` }} />
-            ))}
-          </div>
-        );
+      if (!isConfettiActive) return null;
+      const confettiPieces = Array.from({ length: 150 }).map((_, i) => ({
+        id: i,
+        color: ['#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5', '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4caf50', '#8bc34a', '#cddc39', '#ffeb3b', '#ffc107', '#ff9800'][Math.floor(Math.random() * 15)],
+        left: `${Math.random() * 100}%`,
+        animationDuration: `${Math.random() * 3 + 2}s`,
+        animationDelay: `${Math.random() * 2}s`,
+      }));
+      return (
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-50 pointer-events-none">
+          {confettiPieces.map(p => (
+            <div key={p.id} className="absolute w-2 h-4" style={{ backgroundColor: p.color, left: p.left, animation: `fall ${p.animationDuration} linear ${p.animationDelay} infinite` }} />
+          ))}
+        </div>
+      );
     });
     MemoizedConfetti.displayName = 'MemoizedConfetti';
     return MemoizedConfetti;
