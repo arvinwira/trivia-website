@@ -195,10 +195,18 @@ const allCategories = [
 // --- HomePage Component ---
 const HomePage = ({ tokenLoading }) => {
   const [selectedCategory, setSelectedCategory] = useState(null);
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Simply Trivial",
+    "url": "https://simplytrivial.netlify.app/"
+  };
   
   useDocumentMeta(
     'Simply Trivial - FREE Trivia Quiz Game',
-    'Challenge your knowledge with a free trivia quiz game. Choose from dozens of categories like History, Music, Science, and more!'
+    'Challenge your knowledge with a free trivia quiz game. Choose from dozens of categories like History, Music, Science, and more!',
+    websiteSchema
   );
 
   const difficulties = ['Easy', 'Medium', 'Hard'];
