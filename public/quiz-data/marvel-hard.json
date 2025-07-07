@@ -145,7 +145,7 @@
       "incorrect_answers": ["Kingo", "Ikaris", "Druig"]
     },
     {
-      "question": "What is the name of the fungus-like alien that briefly bonds with Peter Parker in 'Spider-Man 3' (not MCU, but a common trick question)? This is a trick, the answer is from the MCU.",
+      "question": "What is the name of the fungus-like alien that briefly bonds with Peter Parker in 'Spider-Man 3'",
       "correct_answer": "A small piece of the Venom symbiote",
       "incorrect_answers": ["A Skrull", "A Klyntar", "A Brood"]
     }
