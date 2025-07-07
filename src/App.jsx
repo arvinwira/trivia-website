@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
-// Impor komponen dari lokasi baru
 import { HomePage } from './pages/HomePage';
 import { TriviaGame } from './pages/TriviaGame';
 import { Layout } from './components/Layout/Layout';
+import { AboutPage } from './pages/AboutPage';
+import { ContactPage } from './pages/ContactPage';
 
-// Impor fungsi API
 import { fetchToken } from './api/triviaApi';
 
-// Impor CSS utama
 import './index.css';
 
 export default function App() {
@@ -28,7 +27,6 @@ export default function App() {
     initializeApp();
   }, []);
 
-  // Tampilkan pesan loading saat token sedang diambil
   if (isLoading) {
     return (
       <div className="bg-slate-900 text-white min-h-screen flex justify-center items-center">
@@ -45,6 +43,8 @@ export default function App() {
           path="/quiz/:categorySlug/:difficulty" 
           element={<TriviaGame token={token} />} 
         />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
     </Layout>
   );

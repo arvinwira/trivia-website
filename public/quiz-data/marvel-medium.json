@@ -1,0 +1,152 @@
+[
+    {
+      "question": "In which film did Black Widow first appear?",
+      "correct_answer": "Iron Man 2",
+      "incorrect_answers": ["The Avengers", "Captain America: The First Avenger", "Iron Man"]
+    },
+    {
+      "question": "What is the name of the AI created by Tony Stark that eventually becomes The Vision?",
+      "correct_answer": "J.A.R.V.I.S.",
+      "incorrect_answers": ["F.R.I.D.A.Y.", "Ultron", "E.D.I.T.H."]
+    },
+    {
+      "question": "Which Infinity Stone is hidden inside the Eye of Agamotto?",
+      "correct_answer": "The Time Stone",
+      "incorrect_answers": ["The Mind Stone", "The Soul Stone", "The Space Stone"]
+    },
+    {
+      "question": "What is the real name of the Winter Soldier?",
+      "correct_answer": "Bucky Barnes",
+      "incorrect_answers": ["Sam Wilson", "Clint Barton", "Steve Rogers"]
+    },
+    {
+      "question": "What is the name of Peter Quill's first spaceship in Guardians of the Galaxy?",
+      "correct_answer": "The Milano",
+      "incorrect_answers": ["The Benatar", "The Quinjet", "The Starblaster"]
+    },
+    {
+      "question": "Who was the main villain in 'Ant-Man'?",
+      "correct_answer": "Yellowjacket (Darren Cross)",
+      "incorrect_answers": ["Ghost (Ava Starr)", "Sonny Burch", "M.O.D.O.K."]
+    },
+    {
+      "question": "Which powerful cosmic being is the father of Gamora and Nebula?",
+      "correct_answer": "Thanos",
+      "incorrect_answers": ["The Collector", "Ego", "Ronan the Accuser"]
+    },
+    {
+      "question": "On what planet did the Soul Stone reside?",
+      "correct_answer": "Vormir",
+      "incorrect_answers": ["Xandar", "Knowhere", "Morag"]
+    },
+    {
+      "question": "What is the name of the powerful substance the Red Skull seeks in 'Captain America: The First Avenger'?",
+      "correct_answer": "The Tesseract",
+      "incorrect_answers": ["The Aether", "The Orb", "The Scepter"]
+    },
+    {
+      "question": "What is the name of T'Challa's technologically gifted younger sister?",
+      "correct_answer": "Shuri",
+      "incorrect_answers": ["Okoye", "Nakia", "Ramonda"]
+    },
+    {
+      "question": "Which two original Avengers do not appear in 'Captain America: Civil War'?",
+      "correct_answer": "Thor and Hulk",
+      "incorrect_answers": ["Iron Man and Hawkeye", "Black Widow and Captain America", "Nick Fury and Maria Hill"]
+    },
+    {
+      "question": "What is the name of the treaty that regulates the activities of enhanced individuals?",
+      "correct_answer": "The Sokovia Accords",
+      "incorrect_answers": ["The Registration Act", "The Avengers Initiative", "The Helicarrier Treaty"]
+    },
+    {
+      "question": "In 'Thor: Ragnarok', what is the name of the planet Thor and Hulk are stranded on?",
+      "correct_answer": "Sakaar",
+      "incorrect_answers": ["Xandar", "Asgard", "Muspelheim"]
+    },
+    {
+      "question": "Who created Ultron?",
+      "correct_answer": "Tony Stark and Bruce Banner",
+      "incorrect_answers": ["Hank Pym", "Howard Stark", "Arnim Zola"]
+    },
+    {
+      "question": "What is the name of Doctor Strange's magical cloak?",
+      "correct_answer": "The Cloak of Levitation",
+      "incorrect_answers": ["The Sorcerer's Shawl", "The Mantle of Mystery", "The Cape of Agamotto"]
+    },
+    {
+      "question": "What species is Ronan the Accuser, the main villain of 'Guardians of the Galaxy'?",
+      "correct_answer": "Kree",
+      "incorrect_answers": ["Skrull", "Xandarian", "Chitauri"]
+    },
+    {
+      "question": "What is the name of the terrorist organization that kidnaps Tony Stark in the first 'Iron Man' movie?",
+      "correct_answer": "The Ten Rings",
+      "incorrect_answers": ["HYDRA", "The Hand", "A.I.M."]
+    },
+    {
+      "question": "Which of these is NOT an alias used by Natasha Romanoff?",
+      "correct_answer": "Sharon Carter",
+      "incorrect_answers": ["Natalie Rushman", "Yelena Belova", "The Black Widow"]
+    },
+    {
+      "question": "What is Hawkeye's real name?",
+      "correct_answer": "Clint Barton",
+      "incorrect_answers": ["Clint Eastwood", "Barton Fink", "Phil Coulson"]
+    },
+    {
+      "question": "In 'Ant-Man and the Wasp', what realm are they trying to enter to rescue Janet van Dyne?",
+      "correct_answer": "The Quantum Realm",
+      "incorrect_answers": ["The Negative Zone", "The Microverse", "The Astral Plane"]
+    },
+    {
+      "question": "What is the name of the rival company to Stark Industries, led by Justin Hammer?",
+      "correct_answer": "Hammer Industries",
+      "incorrect_answers": ["Roxxon Corporation", "Oscorp", "Pym Technologies"]
+    },
+    {
+      "question": "Who is the ruler of the Dark Dimension?",
+      "correct_answer": "Dormammu",
+      "incorrect_answers": ["Kaecilius", "Mephisto", "Surtur"]
+    },
+    {
+      "question": "What type of particles allows for travel to the Quantum Realm?",
+      "correct_answer": "Pym Particles",
+      "incorrect_answers": ["Stark Particles", "Gamma Particles", "Beta Particles"]
+    },
+    {
+      "question": "What is the name of the alien race that Loki commands in 'The Avengers'?",
+      "correct_answer": "The Chitauri",
+      "incorrect_answers": ["The Kree", "The Skrulls", "The Outriders"]
+    },
+    {
+      "question": "In 'Black Panther', what is Erik Killmonger's primary motivation?",
+      "correct_answer": "To use Wakanda's resources to liberate people of African descent worldwide",
+      "incorrect_answers": ["To become rich", "To destroy Wakanda", "To challenge T'Challa for fun"]
+    },
+    {
+      "question": "Who is the primary antagonist in 'Spider-Man: Homecoming'?",
+      "correct_answer": "The Vulture (Adrian Toomes)",
+      "incorrect_answers": ["Mysterio (Quentin Beck)", "The Tinkerer", "Shocker"]
+    },
+    {
+      "question": "What is the name of the super-soldier program that created Captain America?",
+      "correct_answer": "Project Rebirth",
+      "incorrect_answers": ["Project Pegasus", "Weapon X", "Project Insight"]
+    },
+    {
+      "question": "Who guards the Soul Stone on Vormir?",
+      "correct_answer": "Red Skull",
+      "incorrect_answers": ["The Collector", "The Watcher", "The Grandmaster"]
+    },
+    {
+      "question": "What is the name of the weapon forged for Thor in 'Avengers: Infinity War'?",
+      "correct_answer": "Stormbreaker",
+      "incorrect_answers": ["Mjolnir II", "Gungnir", "Thunderstrike"]
+    },
+    {
+      "question": "Where does Peggy Carter work after WWII, as seen in her solo series?",
+      "correct_answer": "SSR (Strategic Scientific Reserve)",
+      "incorrect_answers": ["S.H.I.E.L.D.", "MI6", "CIA"]
+    }
+  ]

@@ -1,0 +1,152 @@
+[
+    {
+      "question": "The Monaco Grand Prix is famously held on the streets of which principality?",
+      "correct_answer": "Monaco",
+      "incorrect_answers": ["France", "Italy", "Switzerland"]
+    },
+    {
+      "question": "Which driver is known by the nickname 'The Honey Badger'?",
+      "correct_answer": "Daniel Ricciardo",
+      "incorrect_answers": ["Max Verstappen", "Kimi Räikkönen", "Sebastian Vettel"]
+    },
+    {
+      "question": "What is the term for the stop a driver makes in the pits to change tires?",
+      "correct_answer": "Pit Stop",
+      "incorrect_answers": ["Quick Stop", "Tire Change", "Refuel Stop"]
+    },
+    {
+      "question": "Which circuit is known as 'The Temple of Speed'?",
+      "correct_answer": "Monza",
+      "incorrect_answers": ["Silverstone", "Spa-Francorchamps", "Suzuka"]
+    },
+    {
+      "question": "Who was the first-ever Formula 1 World Champion in 1950?",
+      "correct_answer": "Giuseppe 'Nino' Farina",
+      "incorrect_answers": ["Juan Manuel Fangio", "Alberto Ascari", "Stirling Moss"]
+    },
+    {
+      "question": "What do the different colors on a Pirelli tire's sidewall indicate?",
+      "correct_answer": "The tire compound (soft, medium, hard)",
+      "incorrect_answers": ["The tire pressure", "The driver's team", "The tire's age"]
+    },
+    {
+      "question": "Which team made a dramatic return to F1 in 2021 with a famous green livery?",
+      "correct_answer": "Aston Martin",
+      "incorrect_answers": ["Lotus", "Jaguar", "Caterham"]
+    },
+    {
+      "question": "In qualifying, what does 'Q3' refer to?",
+      "correct_answer": "The final session for the top 10 fastest drivers",
+      "incorrect_answers": ["The third qualifying lap", "The third race of the season", "A type of tire"]
+    },
+    {
+      "question": "What is 'porpoising' in the context of F1 aerodynamics?",
+      "correct_answer": "A high-frequency bouncing of the car at high speeds",
+      "incorrect_answers": ["A strategy for overtaking", "A type of engine failure", "A driver error"]
+    },
+    {
+      "question": "The iconic 'Senna S' corner is a famous part of which circuit?",
+      "correct_answer": "Interlagos, Brazil",
+      "incorrect_answers": ["Imola, Italy", "Monte Carlo, Monaco", "Marina Bay, Singapore"]
+    },
+    {
+      "question": "Which constructor holds the record for the most World Constructors' Championships?",
+      "correct_answer": "Ferrari",
+      "incorrect_answers": ["McLaren", "Williams", "Mercedes"]
+    },
+    {
+      "question": "What is a 'sprint race' in a Formula 1 weekend?",
+      "correct_answer": "A shorter race on Saturday that sets the grid for Sunday and awards points",
+      "incorrect_answers": ["The final lap of the race", "A pre-season test race", "A qualifying format"]
+    },
+    {
+      "question": "Who is the CEO of Formula 1 Group?",
+      "correct_answer": "Stefano Domenicali",
+      "incorrect_answers": ["Ross Brawn", "Jean Todt", "Chase Carey"]
+    },
+    {
+      "question": "What is the name of the corner sequence 'Maggots, Becketts, and Chapel' at Silverstone?",
+      "correct_answer": "A series of high-speed changes of direction",
+      "incorrect_answers": ["A hairpin turn", "A long straight", "The pit lane entry"]
+    },
+    {
+      "question": "Which Spanish driver won two world championships with Renault in 2005 and 2006?",
+      "correct_answer": "Fernando Alonso",
+      "incorrect_answers": ["Carlos Sainz Jr.", "Pedro de la Rosa", "Marc Gené"]
+    },
+    {
+      "question": "What does the term 'marbles' refer to on a race track?",
+      "correct_answer": "Small pieces of rubber that accumulate off the racing line",
+      "incorrect_answers": ["Debris from a crash", "Oil spills", "Stones on the track"]
+    },
+    {
+      "question": "Which team principal is famous for the Netflix 'Drive to Survive' quote, 'We are a bunch of wankers'?",
+      "correct_answer": "Guenther Steiner",
+      "incorrect_answers": ["Christian Horner", "Toto Wolff", "Zak Brown"]
+    },
+    {
+      "question": "What is the primary function of the 'bargeboard' on an F1 car?",
+      "correct_answer": "To manage airflow along the sides of the car",
+      "incorrect_answers": ["To cool the brakes", "To protect the driver", "To mount the mirrors"]
+    },
+    {
+      "question": "Which F1 legend was nicknamed 'The Professor' for his intellectual approach to racing?",
+      "correct_answer": "Alain Prost",
+      "incorrect_answers": ["Niki Lauda", "Ayrton Senna", "Jackie Stewart"]
+    },
+    {
+      "question": "What is the 'pit window'?",
+      "correct_answer": "The range of laps in which a driver is expected to make a pit stop",
+      "incorrect_answers": ["The physical window where the pit crew works", "The time limit for a pit stop", "The opening to the pit lane"]
+    },
+    {
+      "question": "Who was the last driver to win a championship for Ferrari before the 2024 season?",
+      "correct_answer": "Kimi Räikkönen",
+      "incorrect_answers": ["Michael Schumacher", "Fernando Alonso", "Sebastian Vettel"]
+    },
+    {
+      "question": "The 'Circuit de Barcelona-Catalunya' is located in which country?",
+      "correct_answer": "Spain",
+      "incorrect_answers": ["Portugal", "France", "Italy"]
+    },
+    {
+      "question": "What is a 'power unit' in F1?",
+      "correct_answer": "The entire hybrid engine system, including multiple components",
+      "incorrect_answers": ["Only the internal combustion engine", "The battery", "The turbocharger"]
+    },
+    {
+      "question": "Which team did Michael Schumacher win his first two world championships with?",
+      "correct_answer": "Benetton",
+      "incorrect_answers": ["Jordan", "Ferrari", "Mercedes"]
+    },
+    {
+      "question": "What is 'dirty air' in racing terms?",
+      "correct_answer": "The turbulent air behind another car, which reduces downforce",
+      "incorrect_answers": ["Air pollution from the cars", "Hot air from the engine", "A penalty for unsportsmanlike conduct"]
+    },
+    {
+      "question": "Which driver famously survived a fiery crash at the 2020 Bahrain Grand Prix?",
+      "correct_answer": "Romain Grosjean",
+      "incorrect_answers": ["Kevin Magnussen", "Lance Stroll", "Nicholas Latifi"]
+    },
+    {
+      "question": "The Red Bull Ring circuit is located in which country?",
+      "correct_answer": "Austria",
+      "incorrect_answers": ["Germany", "Hungary", "Switzerland"]
+    },
+    {
+      "question": "What does a 'stint' refer to in a race?",
+      "correct_answer": "The part of the race between pit stops",
+      "incorrect_answers": ["A single lap", "The qualifying session", "The warm-up lap"]
+    },
+    {
+      "question": "Which team does Christian Horner lead as Team Principal?",
+      "correct_answer": "Red Bull Racing",
+      "incorrect_answers": ["Mercedes", "Ferrari", "McLaren"]
+    },
+    {
+      "question": "Which company is the sole tire supplier for Formula 1?",
+      "correct_answer": "Pirelli",
+      "incorrect_answers": ["Michelin", "Bridgestone", "Goodyear"]
+    }
+  ]

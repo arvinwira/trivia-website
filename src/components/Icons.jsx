@@ -64,3 +64,24 @@ export const IconAnimals = () => (
       className="w-12 h-12 mx-auto mb-4" 
     />
   );
+export const IconOverwatch = () => (
+    <img 
+      src="/icons/overwatch.svg" 
+      alt="Animals Icon" 
+      className="w-12 h-12 mx-auto mb-4" 
+    />
+  );
+  export const IconFormula1 = () => (
+    <img 
+      src="/icons/formula1.svg" 
+      alt="Animals Icon" 
+      className="w-12 h-12 mx-auto mb-4" 
+    />
+  );
+  export const IconMarvel = () => (
+    <img 
+      src="/icons/marvel.svg" 
+      alt="Animals Icon" 
+      className="w-12 h-12 mx-auto mb-4" 
+    />
+  );

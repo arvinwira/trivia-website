@@ -1,0 +1,102 @@
+[
+    {
+      "question": "Which hero is a gorilla scientist from the moon?",
+      "correct_answer": "Winston",
+      "incorrect_answers": ["Wrecking Ball", "Doomfist", "Roadhog"]
+    },
+    {
+      "question": "What is Mercy's role in the game?",
+      "correct_answer": "Support",
+      "incorrect_answers": ["Tank", "Damage", "Controller"]
+    },
+    {
+      "question": "Which hero is famous for the catchphrase 'Cheers, love! The cavalry's here!'?",
+      "correct_answer": "Tracer",
+      "incorrect_answers": ["Widowmaker", "Sombra", "Kiriko"]
+    },
+    {
+      "question": "On a 'Push' map, what is your team's main objective?",
+      "correct_answer": "Push the robot to the enemy's base",
+      "incorrect_answers": ["Capture the control point", "Escort the payload", "Eliminate all opponents"]
+    },
+    {
+      "question": "The Tank hero from Germany who wields a giant rocket hammer is...",
+      "correct_answer": "Reinhardt",
+      "incorrect_answers": ["Torbjörn", "Brigitte", "Junker Queen"]
+    },
+    {
+      "question": "What was D.Va's profession before becoming a hero?",
+      "correct_answer": "Professional gamer",
+      "incorrect_answers": ["Mechanic", "Scientist", "Soldier"]
+    },
+    {
+      "question": "Which ninja hero can climb walls and throw shurikens?",
+      "correct_answer": "Genji",
+      "incorrect_answers": ["Hanzo", "Cassidy", "Reaper"]
+    },
+    {
+      "question": "Which hero comes from Brazil and uses music to heal his team?",
+      "correct_answer": "Lúcio",
+      "incorrect_answers": ["Baptiste", "Zenyatta", "Lifeweaver"]
+    },
+    {
+      "question": "What is Roadhog's iconic weapon for pulling enemies?",
+      "correct_answer": "Chain Hook",
+      "incorrect_answers": ["Grappling Hook", "Scrap Hook", "Whip Shot"]
+    },
+    {
+      "question": "What is the name of Hanzo's ultimate ability that unleashes two spirit dragons?",
+      "correct_answer": "Dragonstrike",
+      "incorrect_answers": ["Dragonblade", "Storm Arrow", "Sonic Arrow"]
+    },
+    {
+      "question": "Which hero can become temporarily invulnerable using 'Wraith Form'?",
+      "correct_answer": "Reaper",
+      "incorrect_answers": ["Soldier: 76", "Moira", "Sombra"]
+    },
+    {
+      "question": "What type of weapon does Soldier: 76 primarily use?",
+      "correct_answer": "Pulse Rifle",
+      "incorrect_answers": ["Shotgun", "Sniper Rifle", "Rocket Launcher"]
+    },
+    {
+      "question": "Which Tank hero can create a protective bubble for herself and her allies?",
+      "correct_answer": "Zarya",
+      "incorrect_answers": ["D.Va", "Sigma", "Orisa"]
+    },
+    {
+      "question": "What is the name of the ice-wall-creating hero from China?",
+      "correct_answer": "Mei",
+      "incorrect_answers": ["Kiriko", "Symmetra", "Pharah"]
+    },
+    {
+      "question": "Which hero is a sniper who can use a grappling hook to reach high places?",
+      "correct_answer": "Widowmaker",
+      "incorrect_answers": ["Ashe", "Ana", "Hanzo"]
+    },
+    {
+      "question": "What is the name of Junkrat's ultimate ability, which is an exploding tire?",
+      "correct_answer": "RIP-Tire",
+      "incorrect_answers": ["Frag Launcher", "Concussion Mine", "Steel Trap"]
+    },
+    {
+      "question": "Which hero says the line 'Justice rains from above!' during their ultimate?",
+      "correct_answer": "Pharah",
+      "incorrect_answers": ["Echo", "Mercy", "Sojourn"]
+    },
+    {
+      "question": "What is the primary role of a Tank hero?",
+      "correct_answer": "To create space and protect teammates",
+      "incorrect_answers": ["To deal the most damage", "To heal the team", "To sneak behind enemy lines"]
+    },
+    {
+      "question": "Which omnic monk can heal allies with an Orb of Harmony?",
+      "correct_answer": "Zenyatta",
+      "incorrect_answers": ["Ramattra", "Bastion", "Orisa"]
+    },
+    {
+      "question": "What is the name of the game mode where one team attacks two points while the other defends?",
+      "correct_answer": "Assault",
+      "incorrect_answers": ["Escort", "Control", "Push"]
+    }
+  ]

@@ -1,0 +1,152 @@
+[
+    {
+      "question": "What is the name of Tony Stark's superhero identity?",
+      "correct_answer": "Iron Man",
+      "incorrect_answers": ["Captain America", "Thor", "Hulk"]
+    },
+    {
+      "question": "What is Captain America's shield made of?",
+      "correct_answer": "Vibranium",
+      "incorrect_answers": ["Adamantium", "Promethium", "Carbonadium"]
+    },
+    {
+      "question": "Which hero is the king of Wakanda?",
+      "correct_answer": "Black Panther",
+      "incorrect_answers": ["Falcon", "War Machine", "Blade"]
+    },
+    {
+      "question": "What is the name of Thor's enchanted hammer?",
+      "correct_answer": "Mjolnir",
+      "incorrect_answers": ["Stormbreaker", "Gungnir", "Hofund"]
+    },
+    {
+      "question": "Who is the green, rage-filled hero created by gamma radiation?",
+      "correct_answer": "Hulk",
+      "incorrect_answers": ["The Thing", "Abomination", "Red Hulk"]
+    },
+    {
+      "question": "What is the name of the spy organization run by Nick Fury?",
+      "correct_answer": "S.H.I.E.L.D.",
+      "incorrect_answers": ["S.W.O.R.D.", "A.I.M.", "HYDRA"]
+    },
+    {
+      "question": "Which villain was the main antagonist in 'The Avengers' (2012)?",
+      "correct_answer": "Loki",
+      "incorrect_answers": ["Thanos", "Ultron", "Red Skull"]
+    },
+    {
+      "question": "What type of doctor was Stephen Strange before he became a sorcerer?",
+      "correct_answer": "Neurosurgeon",
+      "incorrect_answers": ["Cardiologist", "Plastic Surgeon", "General Practitioner"]
+    },
+    {
+      "question": "What is Peter Parker's superhero alter ego?",
+      "correct_answer": "Spider-Man",
+      "incorrect_answers": ["Ant-Man", "Iron Man", "Daredevil"]
+    },
+    {
+      "question": "How many Infinity Stones are there?",
+      "correct_answer": "Six",
+      "incorrect_answers": ["Five", "Seven", "Eight"]
+    },
+    {
+      "question": "Which hero is a master archer and an original member of the Avengers?",
+      "correct_answer": "Hawkeye",
+      "incorrect_answers": ["Green Arrow", "Kate Bishop", "Bullseye"]
+    },
+    {
+      "question": "What is the real name of Black Widow?",
+      "correct_answer": "Natasha Romanoff",
+      "incorrect_answers": ["Wanda Maximoff", "Carol Danvers", "Maria Hill"]
+    },
+    {
+      "question": "The Guardians of the Galaxy operate primarily in what part of the universe?",
+      "correct_answer": "Space",
+      "incorrect_answers": ["Asgard", "Earth", "The Quantum Realm"]
+    },
+    {
+      "question": "What gives Carol Danvers her powers as Captain Marvel?",
+      "correct_answer": "The Tesseract (Space Stone)",
+      "incorrect_answers": ["A super-soldier serum", "Gamma radiation", "A spider bite"]
+    },
+    {
+      "question": "Which hero has the ability to shrink in size?",
+      "correct_answer": "Ant-Man",
+      "incorrect_answers": ["Wasp", "The Atom", "Yellowjacket"]
+    },
+    {
+      "question": "Who is the leader of the Guardians of the Galaxy?",
+      "correct_answer": "Star-Lord (Peter Quill)",
+      "incorrect_answers": ["Drax", "Gamora", "Rocket Raccoon"]
+    },
+    {
+      "question": "What is the name of Tony Stark's AI assistant?",
+      "correct_answer": "J.A.R.V.I.S.",
+      "incorrect_answers": ["F.R.I.D.A.Y.", "K.A.R.E.N.", "E.D.I.T.H."]
+    },
+    {
+      "question": "What planet is Thor from?",
+      "correct_answer": "Asgard",
+      "incorrect_answers": ["Xandar", "Knowhere", "Sakaar"]
+    },
+    {
+      "question": "Who is Captain America's best friend from his childhood?",
+      "correct_answer": "Bucky Barnes",
+      "incorrect_answers": ["Sam Wilson", "Tony Stark", "Howard Stark"]
+    },
+    {
+      "question": "What is the name of the talking raccoon in Guardians of the Galaxy?",
+      "correct_answer": "Rocket",
+      "incorrect_answers": ["Groot", "Bandit", "Fuzzy"]
+    },
+    {
+      "question": "Which Infinity Stone allows its user to control time?",
+      "correct_answer": "The Time Stone",
+      "incorrect_answers": ["The Mind Stone", "The Reality Stone", "The Soul Stone"]
+    },
+    {
+      "question": "Which character frequently says 'I am Groot'?",
+      "correct_answer": "Groot",
+      "incorrect_answers": ["Rocket", "Drax", "Star-Lord"]
+    },
+    {
+      "question": "The evil organization that infiltrated S.H.I.E.L.D. is called...",
+      "correct_answer": "HYDRA",
+      "incorrect_answers": ["The Hand", "A.I.M.", "The Ten Rings"]
+    },
+    {
+      "question": "What is the name of Thor's mischievous adopted brother?",
+      "correct_answer": "Loki",
+      "incorrect_answers": ["Hela", "Odin", "Baldur"]
+    },
+    {
+      "question": "Where is the secret, technologically advanced nation of Wakanda located?",
+      "correct_answer": "Africa",
+      "incorrect_answers": ["South America", "Europe", "Asia"]
+    },
+    {
+      "question": "Which Avenger is a former Air Force pilot?",
+      "correct_answer": "Captain Marvel (Carol Danvers)",
+      "incorrect_answers": ["Iron Man (Tony Stark)", "Hawkeye (Clint Barton)", "Black Widow (Natasha Romanoff)"]
+    },
+    {
+      "question": "Who is known as the 'Sorcerer Supreme'?",
+      "correct_answer": "Doctor Strange",
+      "incorrect_answers": ["Wong", "The Ancient One", "Scarlet Witch"]
+    },
+    {
+      "question": "What is the name of the floating city that Ultron tries to use as a weapon?",
+      "correct_answer": "Sokovia",
+      "incorrect_answers": ["Latveria", "Genosha", "Madripoor"]
+    },
+    {
+      "question": "What food do the Avengers eat together after the Battle of New York?",
+      "correct_answer": "Shawarma",
+      "incorrect_answers": ["Pizza", "Burgers", "Tacos"]
+    },
+    {
+      "question": "What phrase does Captain America famously say when assembling the heroes in 'Avengers: Endgame'?",
+      "correct_answer": "Avengers... Assemble.",
+      "incorrect_answers": ["Let's do this.", "For Asgard!", "It's showtime!"]
+    }
+  ]

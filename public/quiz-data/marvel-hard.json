@@ -1,0 +1,152 @@
+[
+    {
+      "question": "What is the name of the prison where the Guardians of the Galaxy first assemble?",
+      "correct_answer": "The Kyln",
+      "incorrect_answers": ["The Raft", "The Vault", "The Cube"]
+    },
+    {
+      "question": "In 'Iron Man 3', what is the name of the specific Extremis project that Aldrich Killian developed?",
+      "correct_answer": "Project Extremis",
+      "incorrect_answers": ["Project Centipede", "Project T.A.H.I.T.I.", "Project Phoenix"]
+    },
+    {
+      "question": "What is the name of the talking, gun-toting dog in the Guardians of the Galaxy Holiday Special?",
+      "correct_answer": "Cosmo",
+      "incorrect_answers": ["Laika", "Bolt", "Krypto"]
+    },
+    {
+      "question": "In 'WandaVision', what is the name of the town that Wanda takes over?",
+      "correct_answer": "Westview",
+      "incorrect_answers": ["Eastview", "Centerville", "Northwood"]
+    },
+    {
+      "question": "What is the designation of the Iron Man suit that first featured the 'House Party Protocol'?",
+      "correct_answer": "Mark 42",
+      "incorrect_answers": ["Mark 7", "Mark 50", "Mark 85"]
+    },
+    {
+      "question": "In the 'Loki' series, what does the acronym TVA stand for?",
+      "correct_answer": "Time Variance Authority",
+      "incorrect_answers": ["Temporal Violation Agency", "Time Validation Authority", "Total Variant Annihilation"]
+    },
+    {
+      "question": "What is the name of the Celestial who is Peter Quill's father?",
+      "correct_answer": "Ego",
+      "incorrect_answers": ["Arishem", "Eson the Searcher", "Jemiah the Analyzer"]
+    },
+    {
+      "question": "Which of these characters was NOT on the Grandmaster's 'Contest of Champions' tower in 'Thor: Ragnarok'?",
+      "correct_answer": "Beta Ray Bill",
+      "incorrect_answers": ["Man-Thing", "Ares", "Bi-Beast"]
+    },
+    {
+      "question": "In 'Captain America: The Winter Soldier', what song is playing on Nick Fury's stereo during the car chase?",
+      "correct_answer": "Trouble Man by Marvin Gaye",
+      "incorrect_answers": ["Don't You (Forget About Me) by Simple Minds", "Star-Spangled Man by The Starkettes", "Left Hand Free by alt-J"]
+    },
+    {
+      "question": "What is the name of the book of dark magic featured in both 'Doctor Strange' and 'WandaVision'?",
+      "correct_answer": "The Darkhold",
+      "incorrect_answers": ["The Book of Cagliostro", "The Book of the Vishanti", "The Necronomicon"]
+    },
+    {
+      "question": "Who was the original owner of the yellow-and-red Ant-Man suit before Scott Lang?",
+      "correct_answer": "Hank Pym",
+      "incorrect_answers": ["Darren Cross", "Howard Stark", "Bill Foster"]
+    },
+    {
+      "question": "What is the name of the Elder of the Universe who maintains a vast collection of interstellar fauna, relics, and species?",
+      "correct_answer": "The Collector (Taneleer Tivan)",
+      "incorrect_answers": ["The Grandmaster (En Dwi Gast)", "The Broker", "Ego"]
+    },
+    {
+      "question": "Which one of the 'Eternals' has the power of super-speed?",
+      "correct_answer": "Makkari",
+      "incorrect_answers": ["Ikaris", "Sersi", "Kingo"]
+    },
+    {
+      "question": "What is the name of the ancient Asgardian weapon that Odin wields, also known as the All-Father's spear?",
+      "correct_answer": "Gungnir",
+      "incorrect_answers": ["Hofund", "Mjolnir", "Stormbreaker"]
+    },
+    {
+      "question": "The 'Power Stone' was hidden inside an object before being found by Star-Lord. What was that object called?",
+      "correct_answer": "The Orb",
+      "incorrect_answers": ["The Casket", "The Aether", "The Scepter"]
+    },
+    {
+      "question": "What is the name of the secret society of assassins led by The Mandarin in 'Shang-Chi'?",
+      "correct_answer": "The Ten Rings",
+      "incorrect_answers": ["The League of Shadows", "The Hand", "The Zodiac"]
+    },
+    {
+      "question": "In 'Spider-Man: Far From Home', what does the acronym E.D.I.T.H. stand for?",
+      "correct_answer": "Even Dead, I'm The Hero",
+      "incorrect_answers": ["Enhanced Defensive Intelligent Tactical Hardware", "Electronic-Defense, Intelligence, and Tactical Homunculus", "Emergency Deployment and Immediate Threat Helicopter"]
+    },
+    {
+      "question": "What is the name of the organization that employed both of Natasha Romanoff's adoptive parents in 'Black Widow'?",
+      "correct_answer": "The Red Room",
+      "incorrect_answers": ["Leviathan", "HYDRA", "The KGB"]
+    },
+    {
+      "question": "What is the name of the actor who portrays Darcy Lewis?",
+      "correct_answer": "Kat Dennings",
+      "incorrect_answers": ["Natalie Portman", "Stellan Skarsgård", "Jaimie Alexander"]
+    },
+    {
+      "question": "According to the TV series 'Loki', who is the creator of the Time Variance Authority?",
+      "correct_answer": "He Who Remains",
+      "incorrect_answers": ["The Time-Keepers", "Kang the Conqueror", "Ravonna Renslayer"]
+    },
+    {
+      "question": "In 'Doctor Strange', what is the name of the zealous disciple who betrays the Ancient One?",
+      "correct_answer": "Kaecilius",
+      "incorrect_answers": ["Baron Mordo", "Wong", "Nicodemus West"]
+    },
+    {
+      "question": "What is the name of the bar that Clint Barton and Kate Bishop visit in 'Hawkeye'?",
+      "correct_answer": "Grills",
+      "incorrect_answers": ["The Daily Grind", "The Coffee Bean", "Central Perk"]
+    },
+    {
+      "question": "In which movie is the fictional African nation of Sokovia first mentioned?",
+      "correct_answer": "Captain America: The Winter Soldier",
+      "incorrect_answers": ["The Avengers", "Avengers: Age of Ultron", "Iron Man 2"]
+    },
+    {
+      "question": "What is the name of the Kree commander who was Carol Danvers' mentor and leader of Starforce?",
+      "correct_answer": "Yon-Rogg",
+      "incorrect_answers": ["Ronan the Accuser", "Korath the Pursuer", "Mar-Vell"]
+    },
+    {
+      "question": "Which Infinity Stone was used by HYDRA to power their weapons in 'Captain America: The First Avenger'?",
+      "correct_answer": "The Space Stone (from the Tesseract)",
+      "incorrect_answers": ["The Mind Stone", "The Power Stone", "The Reality Stone"]
+    },
+    {
+      "question": "Who composed the main 'Avengers' theme music?",
+      "correct_answer": "Alan Silvestri",
+      "incorrect_answers": ["John Williams", "Hans Zimmer", "Ramin Djawadi"]
+    },
+    {
+      "question": "What is the name of the 'talking' raccoon that Rocket claims to have created in 'Guardians of the Galaxy Vol. 3'?",
+      "correct_answer": "Floor",
+      "incorrect_answers": ["Lylla", "Teefs", "Subject 89P13"]
+    },
+    {
+      "question": "What is the name of the actress who plays America Chavez?",
+      "correct_answer": "Xochitl Gomez",
+      "incorrect_answers": ["Jenna Ortega", "Isabela Merced", "Ariana Greenblatt"]
+    },
+    {
+      "question": "In 'Eternals', which character is the first openly gay superhero in the MCU?",
+      "correct_answer": "Phastos",
+      "incorrect_answers": ["Kingo", "Ikaris", "Druig"]
+    },
+    {
+      "question": "What is the name of the fungus-like alien that briefly bonds with Peter Parker in 'Spider-Man 3' (not MCU, but a common trick question)? This is a trick, the answer is from the MCU.",
+      "correct_answer": "A small piece of the Venom symbiote",
+      "incorrect_answers": ["A Skrull", "A Klyntar", "A Brood"]
+    }
+  ]

@@ -1,0 +1,102 @@
+[
+    {
+      "question": "Before joining Talon, what was Moira O'Deorain's primary field of scientific research?",
+      "correct_answer": "Genetics",
+      "incorrect_answers": ["Cybernetics", "Robotics", "Astrophysics"]
+    },
+    {
+      "question": "What is the name of the spiritual entity worshipped by the Shambali monks like Zenyatta?",
+      "correct_answer": "The Iris",
+      "incorrect_answers": ["The Aurora", "The Anubis", "The Nexus"]
+    },
+    {
+      "question": "Who was the youngest member ever recruited into the original Overwatch strike team?",
+      "correct_answer": "Tracer (Lena Oxton)",
+      "incorrect_answers": ["Genji Shimada", "Winston", "Mei-Ling Zhou"]
+    },
+    {
+      "question": "What is the name of the gang led by Ashe before she was recruited by Cassidy?",
+      "correct_answer": "Deadlock Gang",
+      "incorrect_answers": ["Los Muertos", "The Shimada Clan", "The Junkers"]
+    },
+    {
+      "question": "What is the translation of Kiriko's ultimate line, 'Kitsune no kagidzume o tokihanate!'?",
+      "correct_answer": "Unleash the fox's claws!",
+      "incorrect_answers": ["The spirits are with me!", "Let the fox guide you!", "My ancestors protect me!"]
+    },
+    {
+      "question": "What is the name of the omnic singer who performs at the Cabaret Luna on the Paris map?",
+      "correct_answer": "Luna",
+      "incorrect_answers": ["Thea", "Melody", "Aria"]
+    },
+    {
+      "question": "What was the original name of the hero Cassidy before it was changed in 2021?",
+      "correct_answer": "Jesse McCree",
+      "incorrect_answers": ["Joel McCloud", "John Smith", "Cole Cassidy"]
+    },
+    {
+      "question": "Which Tank's ultimate ability does NOT deal direct damage upon activation?",
+      "correct_answer": "Zarya (Graviton Surge)",
+      "incorrect_answers": ["Reinhardt (Earthshatter)", "Winston (Primal Rage)", "Orisa (Terra Surge)"]
+    },
+    {
+      "question": "In the 'Dragons' animated short, what is the meaning of the Japanese proverb Genji tells Hanzo?",
+      "correct_answer": "Even if I sacrifice my body, I will never sacrifice my honor",
+      "incorrect_answers": ["The student has become the master", "A dragon divided cannot rule", "Revenge is a foolish game"]
+    },
+    {
+      "question": "Who is the original founder of the Talon organization according to Overwatch lore?",
+      "correct_answer": "Augusto Vialli",
+      "incorrect_answers": ["Doomfist (Akande Ogundimu)", "Reaper (Gabriel Reyes)", "Antonio Bartalotti"]
+    },
+    {
+      "question": "Which hero was a test subject at the Lucheng Interstellar facility along with Winston?",
+      "correct_answer": "Wrecking Ball (Hammond)",
+      "incorrect_answers": ["Sojourn", "Sigma", "Mei"]
+    },
+    {
+      "question": "What is the name of the AI program that caused the first Omnic Crisis?",
+      "correct_answer": "Anubis",
+      "incorrect_answers": ["Athena", "Hades", "God Program A.I."]
+    },
+    {
+      "question": "Which hero is the daughter of a founding member of Overwatch, Torbjörn Lindholm?",
+      "correct_answer": "Brigitte",
+      "incorrect_answers": ["Tracer", "Mei", "Mercy"]
+    },
+    {
+      "question": "The 'Biotic Grasp' ability, which can both heal allies and damage enemies, belongs to which hero?",
+      "correct_answer": "Moira",
+      "incorrect_answers": ["Mercy", "Ana", "Baptiste"]
+    },
+    {
+      "question": "What is the name of the elite, cybernetically enhanced fighting force of Egypt that Pharah once served in?",
+      "correct_answer": "Helix Security International",
+      "incorrect_answers": ["The Crusaders", "The Gwishin", "The Ironclad Guild"]
+    },
+    {
+      "question": "Which map is located in a high-tech, self-sustaining city in the Arabian Desert?",
+      "correct_answer": "Oasis",
+      "incorrect_answers": ["Busan", "Ilios", "Numbani"]
+    },
+    {
+      "question": "What is the name of the scientist responsible for Sigma's gravitational powers?",
+      "correct_answer": "Dr. Siebren de Kuiper (Himself)",
+      "incorrect_answers": ["Dr. Harold Winston", "Dr. Mina Liao", "Dr. Angela Ziegler"]
+    },
+    {
+      "question": "Which hero's ultimate ability is called 'Configuration: Artillery'?",
+      "correct_answer": "Bastion",
+      "incorrect_answers": ["Orisa", "D.Va", "Ramattra"]
+    },
+    {
+      "question": "The Shimada Castle, home to Genji and Hanzo, is located in which map?",
+      "correct_answer": "Hanamura",
+      "incorrect_answers": ["Kanezaka", "Busan", "Rialto"]
+    },
+    {
+      "question": "What is the name of the organization that built Ramattra?",
+      "correct_answer": "The Anubis Program",
+      "incorrect_answers": ["Vishkar Corporation", "Volskaya Industries", "The Shambali"]
+    }
+  ]

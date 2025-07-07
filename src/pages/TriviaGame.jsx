@@ -2,23 +2,23 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 
 // Impor dari file-file yang sudah kita buat
-import { allCategories } from '../constants/categories';
+import { allCategories, moreCategories } from '../constants/categories';
 import { slugify } from '../utils';
 import { fetchTriviaQuestions } from '../api/triviaApi';
 import { useDocumentMeta } from '../hooks/useDocumentMeta';
 import { DifficultyBadge } from '../components/DifficultyBadge/DifficultyBadge';
 
 export const TriviaGame = ({ token }) => {
-  // Mengambil parameter dari URL
   const { categorySlug, difficulty } = useParams();
   const navigate = useNavigate();
 
-  // Mencari data kategori berdasarkan slug dari URL
-  const category = allCategories.find(c => slugify(c.name) === categorySlug);
+  const allGameCategories = [...allCategories, ...moreCategories];
 
-  // State untuk mengelola permainan
+  
+  const category = allGameCategories.find(c => slugify(c.name) === categorySlug);
+
   const [questions, setQuestions] = useState([]);
-  const [gameState, setGameState] = useState('playing'); // 'playing' atau 'finished'
+  const [gameState, setGameState] = useState('playing'); 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState(null);
@@ -26,7 +26,6 @@ export const TriviaGame = ({ token }) => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // Mengatur meta tag dan schema untuk SEO
   const title = category ? `${category.name} Quiz - ${difficulty.charAt(0).toUpperCase() + difficulty.slice(1)} | Simply Trivial` : 'Quiz | Simply Trivial';
   const description = category ? `Test your knowledge with our ${difficulty} ${category.name} trivia quiz. Play for free now!` : 'Play a fun trivia quiz!';
 
@@ -48,14 +47,13 @@ export const TriviaGame = ({ token }) => {
 
   useDocumentMeta(title, description, quizSchema);
 
-  // useEffect untuk mengambil data pertanyaan saat komponen dimuat
   useEffect(() => {
     if (!category) {
       setError("Invalid category specified.");
       setLoading(false);
       return;
     }
-    if (!token) {
+    if (typeof category.id === 'number' && !token) {
       setError("Missing API session token. Please return to the main menu to refresh the session.");
       setLoading(false);
       return;
@@ -77,7 +75,6 @@ export const TriviaGame = ({ token }) => {
     getQuestions();
   }, [category, difficulty, token]);
 
-  // Fungsi saat jawaban diklik
   const handleAnswerClick = (answer) => {
     if (isAnswered) return;
     setIsAnswered(true);
@@ -96,7 +93,6 @@ export const TriviaGame = ({ token }) => {
     }, 1500);
   };
 
-  // Fungsi untuk menentukan style tombol jawaban
   const getButtonClass = (answer) => {
     if (!isAnswered) return 'bg-sky-600 hover:bg-sky-700';
     if (answer === questions[currentQuestionIndex].correct_answer) return 'bg-green-500 hover:bg-green-600';
@@ -104,9 +100,8 @@ export const TriviaGame = ({ token }) => {
     return 'bg-slate-700 hover:bg-slate-700 opacity-50';
   };
 
-  // Fungsi untuk menentukan pesan hasil akhir
   const getResultMessage = () => {
-    if (questions.length === 0 && !loading) return "No questions were loaded.";
+    if (!questions || questions.length === 0) return "No questions were loaded.";
     const percentage = score > 0 ? (score / questions.length) * 100 : 0;
     if (percentage === 100) return "Perfect Score! You're a Trivia Master!";
     if (percentage >= 80) return "Excellent Job! You really know your stuff!";
@@ -117,10 +112,8 @@ export const TriviaGame = ({ token }) => {
 
   const handleGoHome = () => navigate('/');
 
-  // Tampilan saat loading
   if (loading) return <div className="text-center"><h2 className="text-2xl font-bold">Loading Questions...</h2></div>;
   
-  // Tampilan jika ada error
   if (error) return (
     <div className="text-center bg-slate-800 p-8 rounded-lg">
       <h2 className="text-2xl font-bold text-red-500 mb-4">An Error Occurred</h2>
@@ -129,7 +122,6 @@ export const TriviaGame = ({ token }) => {
     </div>
   );
 
-  // Tampilan saat game selesai
   if (gameState === 'finished') {
     return (
       <div className="text-center">
@@ -146,10 +138,9 @@ export const TriviaGame = ({ token }) => {
     );
   }
 
-  // Tampilan utama permainan
   return (
     <div className="bg-slate-800 p-6 md:p-10 rounded-2xl shadow-2xl w-full max-w-3xl mx-auto relative">
-      {questions.length > 0 ? (
+      {questions && questions.length > 0 ? (
         <>
           <div className="flex justify-between items-center mb-2">
             <span className="text-sky-400 font-bold text-lg">Question {currentQuestionIndex + 1} / {questions.length}</span>

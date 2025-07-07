@@ -9,8 +9,11 @@ import {
     IconScience,
     IconSports,
     IconMythology,
-    IconAnimals
-} from '../components/Icons'; // Path menunjuk ke file (tanpa .js)
+    IconAnimals,
+    IconOverwatch,
+    IconFormula1,
+    IconMarvel
+} from '../components/Icons'; 
 
 export const allCategories = [
     { id: 9, name: 'General Knowledge', icon: <IconGeneral /> },
@@ -23,3 +26,11 @@ export const allCategories = [
     { id: 20, name: 'Mythology', icon: <IconMythology /> },
     { id: 27, name: 'Animals', icon: <IconAnimals /> },
 ];
+
+export const moreCategories = [
+    { id: 'overwatch-2', name: 'Overwatch 2 Quiz', icon: <IconOverwatch /> },
+    { id: 'formula-1', name: 'Formula 1 Quiz', icon: <IconFormula1/> },
+    { id: 'marvel', name: 'Marvel Cinematic Universe Quiz', icon: <IconMarvel/> },
+
+    
+  ];

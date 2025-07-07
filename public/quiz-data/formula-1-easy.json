@@ -1,0 +1,152 @@
+[
+    {
+      "question": "Which team is famous for its red cars and is based in Maranello, Italy?",
+      "correct_answer": "Ferrari",
+      "incorrect_answers": ["Mercedes", "Red Bull Racing", "McLaren"]
+    },
+    {
+      "question": "How many wheels are on a Formula 1 car?",
+      "correct_answer": "4",
+      "incorrect_answers": ["6", "2", "8"]
+    },
+    {
+      "question": "What is the name of the car that comes out during a race interruption?",
+      "correct_answer": "Safety Car",
+      "incorrect_answers": ["Pace Car", "Lead Car", "Medical Car"]
+    },
+    {
+      "question": "Which British driver won seven world championships, tying with Michael Schumacher?",
+      "correct_answer": "Lewis Hamilton",
+      "incorrect_answers": ["Jenson Button", "Nigel Mansell", "Lando Norris"]
+    },
+    {
+      "question": "What does 'DRS' stand for in Formula 1?",
+      "correct_answer": "Drag Reduction System",
+      "incorrect_answers": ["Direct Racing System", "Downforce Recovery System", "Dynamic Response System"]
+    },
+    {
+      "question": "Which Dutch driver is known for his aggressive driving style and won his first championship in 2021?",
+      "correct_answer": "Max Verstappen",
+      "incorrect_answers": ["Nyck de Vries", "Giedo van der Garde", "Jos Verstappen"]
+    },
+    {
+      "question": "The race starts with a formation of lights. How many red lights are there?",
+      "correct_answer": "5",
+      "incorrect_answers": ["3", "4", "6"]
+    },
+    {
+      "question": "What is the main objective of a pit stop?",
+      "correct_answer": "To change tires",
+      "incorrect_answers": ["To refuel the car", "To wash the car", "To let the driver rest"]
+    },
+    {
+      "question": "Which country hosts the famous Silverstone circuit?",
+      "correct_answer": "United Kingdom",
+      "incorrect_answers": ["Germany", "Belgium", "Italy"]
+    },
+    {
+      "question": "What is the color of the flag shown to the winner at the end of a race?",
+      "correct_answer": "Chequered Flag (Black and White)",
+      "incorrect_answers": ["Green Flag", "Red Flag", "Yellow Flag"]
+    },
+    {
+      "question": "Which team does Toto Wolff lead as Team Principal?",
+      "correct_answer": "Mercedes-AMG Petronas F1 Team",
+      "incorrect_answers": ["Red Bull Racing", "Scuderia Ferrari", "Aston Martin"]
+    },
+    {
+      "question": "What type of engine is currently used in Formula 1 cars?",
+      "correct_answer": "Hybrid",
+      "incorrect_answers": ["V8", "V10", "V12"]
+    },
+    {
+      "question": "Who is the only driver from Thailand currently racing in F1?",
+      "correct_answer": "Alexander Albon",
+      "incorrect_answers": ["Yuki Tsunoda", "Guanyu Zhou", "Logan Sargeant"]
+    },
+    {
+      "question": "What is the term for the position on the grid for the driver who was fastest in qualifying?",
+      "correct_answer": "Pole Position",
+      "incorrect_answers": ["First Place", "Front Row", "Top Spot"]
+    },
+    {
+      "question": "The Spa-Francorchamps circuit, famous for the 'Eau Rouge' corner, is located in which country?",
+      "correct_answer": "Belgium",
+      "incorrect_answers": ["France", "Germany", "Netherlands"]
+    },
+    {
+      "question": "Which team is known for its 'papaya' orange color scheme?",
+      "correct_answer": "McLaren",
+      "incorrect_answers": ["Alpine", "Williams", "Haas"]
+    },
+    {
+      "question": "What is a 'hat-trick' in Formula 1?",
+      "correct_answer": "Pole position, fastest lap, and race win",
+      "incorrect_answers": ["Winning three races in a row", "Winning three championships", "Finishing on the podium three times"]
+    },
+    {
+      "question": "Which driver from Monaco currently races for Ferrari?",
+      "correct_answer": "Charles Leclerc",
+      "incorrect_answers": ["Carlos Sainz Jr.", "Pierre Gasly", "Esteban Ocon"]
+    },
+    {
+      "question": "What is the role of the halo on an F1 car?",
+      "correct_answer": "To protect the driver's head",
+      "incorrect_answers": ["To improve aerodynamics", "To hold the camera", "To cool the engine"]
+    },
+    {
+      "question": "The Suzuka Circuit in Japan is famous for what unique track feature?",
+      "correct_answer": "A figure-eight layout",
+      "incorrect_answers": ["A banked corner", "A tunnel", "A section through a forest"]
+    },
+    {
+      "question": "Which team is named after an energy drink?",
+      "correct_answer": "Red Bull Racing",
+      "incorrect_answers": ["Monster Energy F1", "Rockstar Racing", "Burn F1 Team"]
+    },
+    {
+      "question": "What is the minimum weight for a Formula 1 car, including the driver?",
+      "correct_answer": "798 kg",
+      "incorrect_answers": ["500 kg", "1000 kg", "650 kg"]
+    },
+    {
+      "question": "Which Finnish driver was known as 'The Iceman' for his calm demeanor?",
+      "correct_answer": "Kimi Räikkönen",
+      "incorrect_answers": ["Mika Häkkinen", "Valtteri Bottas", "Keke Rosberg"]
+    },
+    {
+      "question": "What do drivers drink during a race through a tube in their helmet?",
+      "correct_answer": "Water or a special drink mix",
+      "incorrect_answers": ["Energy drinks", "Coffee", "They don't drink during a race"]
+    },
+    {
+      "question": "How many points does a driver get for winning a race?",
+      "correct_answer": "25",
+      "incorrect_answers": ["18", "15", "10"]
+    },
+    {
+      "question": "What is the name of the French team with a blue and pink livery?",
+      "correct_answer": "Alpine",
+      "incorrect_answers": ["AlphaTauri", "Williams", "Sauber"]
+    },
+    {
+      "question": "The final race of the season is traditionally held at which circuit?",
+      "correct_answer": "Yas Marina Circuit, Abu Dhabi",
+      "incorrect_answers": ["Interlagos, Brazil", "Albert Park, Australia", "Circuit of the Americas, USA"]
+    },
+    {
+      "question": "What does a yellow flag mean during a race?",
+      "correct_answer": "Danger ahead, slow down, no overtaking",
+      "incorrect_answers": ["Last lap", "Slippery track", "Race start"]
+    },
+    {
+      "question": "Which German driver won four consecutive world championships with Red Bull Racing?",
+      "correct_answer": "Sebastian Vettel",
+      "incorrect_answers": ["Nico Rosberg", "Michael Schumacher", "Nico Hülkenberg"]
+    },
+    {
+      "question": "What is the governing body of Formula 1?",
+      "correct_answer": "FIA (Fédération Internationale de l'Automobile)",
+      "incorrect_answers": ["F1 Group", "Liberty Media", "FOM (Formula One Management)"]
+    }
+  ]

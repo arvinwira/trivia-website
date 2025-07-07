@@ -1,0 +1,102 @@
+[
+    {
+      "question": "What is the name of Ashe's omnic companion who is also her ultimate ability?",
+      "correct_answer": "B.O.B.",
+      "incorrect_answers": ["Alfred", "Omnius", "Butler"]
+    },
+    {
+      "question": "Which map is the homeland of Junkrat and Roadhog?",
+      "correct_answer": "Junkertown",
+      "incorrect_answers": ["Dorado", "Havana", "Rialto"]
+    },
+    {
+      "question": "What is the real name of the hero Pharah?",
+      "correct_answer": "Fareeha Amari",
+      "incorrect_answers": ["Ana Amari", "Angela Ziegler", "Amélie Lacroix"]
+    },
+    {
+      "question": "The criminal organization that is the main enemy of Overwatch is...",
+      "correct_answer": "Talon",
+      "incorrect_answers": ["Null Sector", "Helix Security", "Vishkar Corporation"]
+    },
+    {
+      "question": "Symmetra's ultimate ability that creates a massive energy wall is called...",
+      "correct_answer": "Photon Barrier",
+      "incorrect_answers": ["Teleporter", "Sentry Turret", "Light Wall"]
+    },
+    {
+      "question": "Who was the first new hero officially introduced for the release of Overwatch 2?",
+      "correct_answer": "Sojourn",
+      "incorrect_answers": ["Junker Queen", "Kiriko", "Ramattra"]
+    },
+    {
+      "question": "What is the name of the hamster that pilots the Wrecking Ball mech?",
+      "correct_answer": "Hammond",
+      "incorrect_answers": ["Winston Jr.", "Pip", "Squeaky"]
+    },
+    {
+      "question": "In which city is the King's Row map located?",
+      "correct_answer": "London",
+      "incorrect_answers": ["Paris", "New York", "Tokyo"]
+    },
+    {
+      "question": "What is the main weapon used by Zarya to fire particle energy?",
+      "correct_answer": "Particle Cannon",
+      "incorrect_answers": ["Fusion Driver", "Pulse Rifle", "Biotic Rifle"]
+    },
+    {
+      "question": "What is the real name of the hero Reaper?",
+      "correct_answer": "Gabriel Reyes",
+      "incorrect_answers": ["Jack Morrison", "Cole Cassidy", "Hanzo Shimada"]
+    },
+    {
+      "question": "Which hero's ultimate ability is 'Coalescence', a beam that both damages enemies and heals allies?",
+      "correct_answer": "Moira",
+      "incorrect_answers": ["Symmetra", "Zarya", "Mei"]
+    },
+    {
+      "question": "The 'Helix Rockets' ability belongs to which Damage hero?",
+      "correct_answer": "Soldier: 76",
+      "incorrect_answers": ["Pharah", "Bastion", "Echo"]
+    },
+    {
+      "question": "What is the name of the organization that built the 'Titans' which Orisa is a part of?",
+      "correct_answer": "OR15",
+      "incorrect_answers": ["Anubis", "Volskaya Industries", "Vishkar Corporation"]
+    },
+    {
+      "question": "Which Support hero can throw a 'Biotic Grenade' that boosts healing and prevents enemies from being healed?",
+      "correct_answer": "Ana",
+      "incorrect_answers": ["Baptiste", "Moira", "Lúcio"]
+    },
+    {
+      "question": "What country is the hero Sojourn from?",
+      "correct_answer": "Canada",
+      "incorrect_answers": ["United States", "France", "Germany"]
+    },
+    {
+      "question": "Which hero's passive ability, 'Cyber-Agility', allows them to climb walls and double jump?",
+      "correct_answer": "Genji",
+      "incorrect_answers": ["Hanzo", "Kiriko", "Lucio"]
+    },
+    {
+      "question": "The 'Lijiang Tower' map is located in which country?",
+      "correct_answer": "China",
+      "incorrect_answers": ["South Korea", "Japan", "Nepal"]
+    },
+    {
+      "question": "Which hero can deploy a 'Sentry Turret' that automatically fires at enemies?",
+      "correct_answer": "Torbjörn",
+      "incorrect_answers": ["Symmetra", "Bastion", "Wrecking Ball"]
+    },
+    {
+      "question": "What is the name of Sigma's ultimate ability, where he lifts enemies into the air and slams them down?",
+      "correct_answer": "Gravitic Flux",
+      "incorrect_answers": ["Accretion", "Experimental Barrier", "Kinetic Grasp"]
+    },
+    {
+      "question": "Junker Queen's primary weapon is a...",
+      "correct_answer": "Shotgun",
+      "incorrect_answers": ["Rifle", "SMG", "Rocket Launcher"]
+    }
+  ]

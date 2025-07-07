@@ -1,0 +1,152 @@
+[
+    {
+      "question": "What is the 'undercut' in race strategy?",
+      "correct_answer": "Pitting earlier than a rival to gain a time advantage on fresh tires",
+      "incorrect_answers": ["Pitting later than a rival", "Driving under another car", "A type of aerodynamic wing"]
+    },
+    {
+      "question": "Which team achieved a historic 1-2 finish in the 1988 season, winning 15 out of 16 races?",
+      "correct_answer": "McLaren",
+      "incorrect_answers": ["Ferrari", "Williams", "Lotus"]
+    },
+    {
+      "question": "What does a blue flag mean when shown to a driver?",
+      "correct_answer": "You are about to be lapped and must let the faster car pass",
+      "incorrect_answers": ["The track is slippery", "The race is over", "Return to the pits"]
+    },
+    {
+      "question": "Who is the only driver to have won the 'Triple Crown of Motorsport' (Monaco GP, Indy 500, 24 Hours of Le Mans)?",
+      "correct_answer": "Graham Hill",
+      "incorrect_answers": ["Fernando Alonso", "Juan Pablo Montoya", "Ayrton Senna"]
+    },
+    {
+      "question": "What is the material primarily used to construct a Formula 1 car's chassis or 'monocoque'?",
+      "correct_answer": "Carbon Fibre Composite",
+      "incorrect_answers": ["Aluminum", "Steel", "Titanium"]
+    },
+    {
+      "question": "In the 1976 season, which driver pulled out of the final race in Japan due to dangerous wet conditions, ultimately losing the championship?",
+      "correct_answer": "Niki Lauda",
+      "incorrect_answers": ["James Hunt", "Jody Scheckter", "Clay Regazzoni"]
+    },
+    {
+      "question": "What was the 'F-duct', a controversial aerodynamic innovation in 2010, designed to do?",
+      "correct_answer": "Stall the rear wing on straights to reduce drag",
+      "incorrect_answers": ["Cool the engine more efficiently", "Increase front wing downforce", "Heat up the tires faster"]
+    },
+    {
+      "question": "Which F1 team was originally founded as Tyrrell Racing Organisation?",
+      "correct_answer": "Mercedes-AMG Petronas F1 Team",
+      "incorrect_answers": ["Red Bull Racing", "McLaren F1 Team", "Williams Racing"]
+    },
+    {
+      "question": "What does 'parc fermé' conditions mean in an F1 weekend?",
+      "correct_answer": "Cars cannot be significantly modified between qualifying and the race",
+      "incorrect_answers": ["The pit lane is closed", "Drivers must stay in the paddock", "Only soft tires can be used"]
+    },
+    {
+      "question": "Who is the only posthumous Formula 1 World Champion?",
+      "correct_answer": "Jochen Rindt",
+      "incorrect_answers": ["Ayrton Senna", "Gilles Villeneuve", "Ronnie Peterson"]
+    },
+    {
+      "question": "The 'fan car', the Brabham BT46B, was famously withdrawn after winning its only race. What was its primary aerodynamic advantage?",
+      "correct_answer": "A large fan at the back created a vacuum, generating massive downforce",
+      "incorrect_answers": ["It cooled the engine, providing more power", "It blew air over the rear wing", "It reduced the car's weight"]
+    },
+    {
+      "question": "Which driver holds the record for the most race starts in Formula 1 history?",
+      "correct_answer": "Fernando Alonso",
+      "incorrect_answers": ["Kimi Räikkönen", "Rubens Barrichello", "Lewis Hamilton"]
+    },
+    {
+      "question": "What was the 'mass damper' system, pioneered by Renault in 2005-2006, eventually banned for?",
+      "correct_answer": "Being considered a movable aerodynamic device",
+      "incorrect_answers": ["Being too expensive", "Being unsafe in a crash", "Making the car too heavy"]
+    },
+    {
+      "question": "Which circuit hosted the first-ever Formula 1 World Championship race in 1950?",
+      "correct_answer": "Silverstone",
+      "incorrect_answers": ["Monza", "Monaco", "Spa-Francorchamps"]
+    },
+    {
+      "question": "Who was the last F1 driver to win the championship in a car with a manual gearbox?",
+      "correct_answer": "Michael Schumacher (in 1994 & 1995)",
+      "incorrect_answers": ["Alain Prost", "Ayrton Senna", "Nigel Mansell"]
+    },
+    {
+      "question": "The controversial 1997 European Grand Prix saw Michael Schumacher collide with which rival, leading to his disqualification from the championship?",
+      "correct_answer": "Jacques Villeneuve",
+      "incorrect_answers": ["Damon Hill", "Mika Häkkinen", "David Coulthard"]
+    },
+    {
+      "question": "What is the specific function of the MGU-K component in an F1 power unit?",
+      "correct_answer": "It recovers kinetic energy from braking and redeploys it as electrical power",
+      "incorrect_answers": ["It recovers heat energy from the exhaust", "It spins the turbocharger", "It acts as the car's starter motor"]
+    },
+    {
+      "question": "Which team was the first to introduce a chassis made entirely of carbon fibre composite in 1981?",
+      "correct_answer": "McLaren (with the MP4/1)",
+      "incorrect_answers": ["Lotus", "Ferrari", "Brabham"]
+    },
+    {
+      "question": "What is a 'Bernie Ecclestone-ism'?",
+      "correct_answer": "A colloquial term for a complex or controversial deal made by the former F1 boss",
+      "incorrect_answers": ["A specific type of F1 engine", "A racing strategy", "A famous corner at a racetrack"]
+    },
+    {
+      "question": "Which driver scored a podium on his F1 debut at the 1996 Australian Grand Prix?",
+      "correct_answer": "Jacques Villeneuve",
+      "incorrect_answers": ["Lewis Hamilton", "Juan Pablo Montoya", "Ayrton Senna"]
+    },
+    {
+      "question": "What was the purpose of the 'shark fin' on the engine cover of F1 cars, prominent in the late 2010s?",
+      "correct_answer": "To improve airflow stability to the rear wing",
+      "incorrect_answers": ["To display sponsor logos", "To cool the power unit", "To house the onboard camera"]
+    },
+    {
+      "question": "Which constructor won the F1 championship in its debut season in 2009?",
+      "correct_answer": "Brawn GP",
+      "incorrect_answers": ["Mercedes", "Red Bull Racing", "Wolf Racing"]
+    },
+    {
+      "question": "What is the '107% rule' in qualifying?",
+      "correct_answer": "A driver must set a lap time within 107% of the fastest Q1 time to be allowed to race",
+      "incorrect_answers": ["A car's weight must be within 107% of the minimum limit", "A team's budget cap cannot exceed 107% of the previous year", "A driver must complete 107% of the race distance to be classified"]
+    },
+    {
+      "question": "Which driver gave the Jordan team its first-ever F1 victory at the chaotic 1998 Belgian Grand Prix?",
+      "correct_answer": "Damon Hill",
+      "incorrect_answers": ["Ralf Schumacher", "Giancarlo Fisichella", "Eddie Irvine"]
+    },
+    {
+      "question": "The 'Coandă effect' was a key aerodynamic principle behind which part of the car in the early 2010s?",
+      "correct_answer": "The exhaust system, to blow hot gases onto the diffuser",
+      "incorrect_answers": ["The front wing endplates", "The brake ducts", "The underside of the chassis"]
+    },
+    {
+      "question": "Who was the first Japanese driver to score a podium in Formula 1?",
+      "correct_answer": "Aguri Suzuki",
+      "incorrect_answers": ["Kamui Kobayashi", "Takuma Sato", "Yuki Tsunoda"]
+    },
+    {
+      "question": "What is the specific role of the MGU-H component in an F1 power unit?",
+      "correct_answer": "It recovers heat energy from the exhaust and can be used to spin the turbocharger or charge the battery",
+      "incorrect_answers": ["It recovers kinetic energy from braking", "It directly powers the wheels", "It cools the hybrid system"]
+    },
+    {
+      "question": "Which team was disqualified from the entire 2007 Constructors' Championship due to the 'Spygate' controversy?",
+      "correct_answer": "McLaren",
+      "incorrect_answers": ["Ferrari", "Renault", "Toyota"]
+    },
+    {
+      "question": "Which circuit has the highest elevation above sea level on the current F1 calendar?",
+      "correct_answer": "Autódromo Hermanos Rodríguez, Mexico City",
+      "incorrect_answers": ["Interlagos, Brazil", "Red Bull Ring, Austria", "Circuit de Spa-Francorchamps, Belgium"]
+    },
+    {
+      "question": "Who is the only person to have won world championships on both two wheels (motorcycles) and four wheels (F1)?",
+      "correct_answer": "John Surtees",
+      "incorrect_answers": ["Tazio Nuvolari", "Stirling Moss", "Jim Clark"]
+    }
+  ]
